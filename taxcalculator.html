@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tax Calculator</title>
+    <!-- Link HTML file to the CSS stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="main_calculator">
+      <div>
+        <img src="/assets2/asset/51f2fc1936d5776b29000787.svg" id="calculator">
+        <header><b>Tax Calculator</b></header>
+        <!-- Create input field -->
+        <div id="input_field">
+          <label>Cost:</label>
+          <input id="cost" type="number" size="20">
+        </div>
+        <!-- Create input field -->
+        <div id="input_field">
+          <label>Tax Rate (%):</label>
+          <input id="tax_rate" type="number" size="20">
+        </div>
+        <!-- Create input field -->
+        <div id="input_field">
+          <label>Tax Value: </label>
+          <input id="tax_value" type="number" size="20">
+        </div>
+        <!-- Create input field -->
+        <div id="input_field">
+          <label>Total Cost:</label>
+          <input id="total_cost" type="number" size="20">
+        </div>
+        <!-- Create button -->
+        <button onclick="calculateTax()">Calculate</button>
+        <!-- Create button -->
+        <button onclick="reset()">Clear</button>
+      </div>
+    </div>
+    <!-- Start Javascript code -->
+    <script>
+      // This function resets all of the fields
+      function reset(){
+        document.getElementById("cost").value = "";
+        document.getElementById("tax_rate").value = "";
+        document.getElementById("tax_value").value = "";
+        document.getElementById("total_cost").value = "";
+      }
+      // This function calculates the Tax
+      function calculateTax() {
+        var cost = parseFloat(document.getElementById("cost").value);
+        var rate = parseFloat(document.getElementById("tax_rate").value);
+        var tax_value = cost * (rate/100.0);
+        var total_cost = cost + tax_value;
+        document.getElementById("tax_value").value = tax_value;
+        document.getElementById("total_cost").value = total_cost;
+      }
+    </script>
+  </body>
+</html>
