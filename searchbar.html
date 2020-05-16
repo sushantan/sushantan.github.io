@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link  rel="icon"  href="header.jpg"/>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100&display=swap" rel="stylesheet">
+<title>Search bar</title>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 40%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+body {
+background-color: #555;/* font-family:  sans-serif; */
+max-width:100%;
+max-height:100%;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  visibility: hidden;
+  color:black;
+}
+
+#myUL li a {
+  width: 40%;
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  display: block;
+  font-family: lato, sans-serif;
+  color:black;
+}
+
+#myUL li a:hover:not(.header) {
+ color: black;
+}
+
+h2 {
+background-color: blue;
+letter-spacing: 0.8px;
+padding: 0.3%;
+width: 40%;
+font-family:sans-serif;
+}
+</style>
+</head>
+<body bgcolor="#555">
+
+<h2><center>Search bar</center></h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="What are you looking for........" title="search">
+
+<ul id="myUL"><h1>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="blogpagr.html">blogs</a></li>
+    <li><a href="games.html">games</a></li>
+      <li><a href="blog.html">mystery chicken blog</a></li>
+    <li><a href="comments.html">comments</a></li>
+      <li><a href="music.html">music on this website</a></li>
+    <li><a href="youtube.html">youtube</a></li>
+      <li><a href="other stuff.html">other things i do</a></li>
+    <li><a href="more about me.html">About and credits</a></li>
+          <li><a href="https://www.youtube.com/channel/UCfJLBm74L0KW0GeccoqT6zg">My Youtube Channel</a></li>
+    <li><a href="https://scratch.mit.edu/users/sushantanthegreat/">My scratch account</a></li>
+      <li><a href="https://github.com/sushantan/">my scratch account</a></li>
+    <li><a href="websitemaker.html">HTML File Maker</a></li>
+      <li><a href="games/">Games home</a></li>
+            <li><a href="https://scratch.mit.edu/projects/384498861/fullscreen/">pop the baloon game</a></li>
+                  <li><a href="https://scratch.mit.edu/projects/384533661/fullscreen/">catch the shark using the octopus</a></li>
+            <li><a href="https://scratch.mit.edu/projects/385152304/fullscreen/">run from the shark</a></li>
+              <li><a href="https://scratch.mit.edu/projects/385468200/">Beat the cat</a></li>
+              <li><a href="https://scratch.mit.edu/projects/391165933/fullscreen/"> catch the apple</a></li>
+              <li><a href="websitemaker.html">HTML File Maker</a></li>
+              <li><a href=""></a></li>
+    <li><a href=""></a></li>
+
+</h1></ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "block";
+            li[i].style.visibility = "visible";
+        } else {
+                    li[i].style.visibility = "none";
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>
