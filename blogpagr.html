@@ -1,5 +1,8 @@
 <html>
-<head><title>blogs</title></head>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>blogs</title></head>
 <body>
 <style>
 #header{
@@ -9,19 +12,64 @@ text-align:center;
 
 
 }
-body{
-max-width:100%;
-background-color:#999;
-max-width:100%;
+		body {
+ background: url('tst.jpg') no-repeat;
+ background-size: none;
+ margin-left: 10%;
+ max-width:100%;
+ max-height:auto;
+}
+		
+
+ul {
+ margin: 0px;
+ padding: 0px;
+ list-style: none;
+ font-family: arial;
+}
+
+ul li {
+ float: left;
+ width: 200px;
+ height: 40px;
+ background-color: black;
+ opacity: .8;
+ line-height: 40px;
+ text-align: center;
+ font-size: 20px;
+}
+
+ul li a {
+ text-decoration: none;
+ display: block;
+ background-color:white;
+ color:black;
+ 
+}
+
+ul li a:hover {
+ background-color:blue;
+ color:black;
+
 
 }
-h3{
-font-size:30px;
-background-color:yellow;
+
+ul li ul li{
+ display: none;
+}
+
+ul li:hover ul li {
+ display: block;
+}
+h1{
+background-color:#95a5a6;
+color:white;
+text-align:center;
 }
 a{
-
-
+background-color:blue;}
+a:hover{
+background-color:white;
 }
 </style>
 
@@ -29,11 +77,49 @@ a{
 <div id="header">
 <h1>Blogs</h1>
 </div>
-<h3><center><a href="https://sushantan.github.io/" class=button>home</a>    <a href="https://sushantan.github.io/music.html" class=button>music</a>    <a href="https://sushantan.github.io/comments.html" class=button>comments</a>    <a href="https://sushantan.github.io/youtube.html" class=button>youtube</a>    <a href="https://sushantan.github.io/games.html" class=button>games</a>    <a href="https://sushantan.github.io/other stuff.html">other stuff</a>    <a href="blogpagr.html">blogs</a></h3>
+<ul>
+ <li><a href="index.html">Home</a></li>
+  <li><a href="comments.html" input="text" onclick="alert('you are going to see the comments google doc')">comments</a></li>
+
+ <li><a href="youtube.html">youtube</a>
+
+  <ul>
+   <li><a href="https://www.youtube.com/watch?v=eRtNPpvacW8">waltz mysteque</a></li>
+   <li><a href="https://www.youtube.com/watch?v=5zpNJaK1_Kw">sunflower piano cover</a></li>
+   <li><a href="https://www.youtube.com/watch?v=xJwJT3jfdfs">Anirudh's Hits</a></li>
+   <li><a href="https://www.youtube.com/watch?v=oQFV3xSJd3g">My Mini Medley</a></li>
+   <li><a href="https://www.youtube.com/watch?v=fwP5nhBXwc0">Kal ho naa ho piano </a></li>
+   <li><a href="https://www.youtube.com/watch?v=BGqBXIdga24">mr bean piano cover</a></li>
+      <li><a href="https://www.youtube.com/watch?v=xtUaYJXXSAU">james bond piano </a></li>
+	     <li><a href="https://www.youtube.com/watch?v=s1wFKTsSXa4">Old town road piano</a></li>
+
+
+
+  </ul>
+ </li>
+ <li><a href="#">music</a>
+     <li><a href="searchbar.html">search </a>
+
+ <li><a href="otherstuff.html" onclick="alert('YOu are going to see the Other Things i do')">other stuff</a>
+  <ul>
+   <li><a href="https://www.youtube.com/channel/UCfJLBm74L0KW0GeccoqT6zg">My Youtube channel</a></li>
+   <li><a href="https://scratch.mit.edu/users/sushantanthegreat/">My scratch account</a></li>
+      <li><a href="https://github.com/sushantan/">My Github Account</a></li>
+
+  </ul>
+ </li>
+ <li><a href="blogpagr.html">Blogs</a>
+  <ul>
+   <li><a href="blog.html">Mystery Chicken Blog</a></li>
+   <li><a href=""></a></li>
+      <li><a href=""></a></li>
+	  
+
+
+  </ul>
 
 <br><br><br><br>
-<h1><center><a href="blog.html">Mystery chicken</a></center></h1>
-
+<a href="blog.html" style="">Mystery Chicken Blog</button>
 
 </body>
 </html>
