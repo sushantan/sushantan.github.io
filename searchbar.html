@@ -1,0 +1,149 @@
+<html>
+
+
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title></title>
+</head>
+<body>
+<style>
+body{
+background-image:url('tst.jpg')
+font-family:sans-serif;
+font-size:30px;
+background-color:gray;
+max-width:100%;
+
+}
+/* Style the search box */
+#mySearch {
+  width: 100%;
+  font-size: 18px;
+  padding: 11px;
+  border: 1px solid #ddd;
+}
+
+/* Style the navigation menu */
+#myMenu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Style the navigation links */
+#myMenu li a {
+  padding: 12px;
+  text-decoration: none;
+  color: black;
+  display: block
+}
+
+#myMenu li a:hover {
+  background-color: #eee;
+}
+a:hover{
+background-color:gray;
+}
+#container{
+margin-left: auto;
+margin-right: auto;width:800px;
+background-color:black;
+}
+#search{
+background-color:blue;
+width:500px;
+background-color:white;
+}
+a{
+background-color:blue;
+color:white
+}
+a:hover{
+background-color:white;
+color:black;
+max-width:100%;
+}
+</style>
+<div id="container">
+<div id="search">
+
+<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search for what you need.." title="Type in a category">
+
+<ul id="myMenu">
+  </li>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="comments.html">comments</a></li>
+   <li><a href="games.html">Games</a></li>
+
+
+ <li><a href="youtube.html">youtube</a>
+ <li><a href="https://www.youtube.com/watch?v=eRtNPpvacW8">waltz mysteque</a></li>
+   <li><a href="https://www.youtube.com/watch?v=5zpNJaK1_Kw">sunflower piano cover</a></li>
+   <li><a href="https://www.youtube.com/watch?v=xJwJT3jfdfs">Anirudh's Hits</a></li>
+   <li><a href="https://www.youtube.com/watch?v=oQFV3xSJd3g">My Mini Medley</a></li>
+   <li><a href="https://www.youtube.com/watch?v=fwP5nhBXwc0">Kal ho naa ho piano </a></li>
+   <li><a href="https://www.youtube.com/watch?v=BGqBXIdga24">mr bean piano cover</a></li>
+      <li><a href="https://www.youtube.com/watch?v=xtUaYJXXSAU">james bond piano </a></li>
+	     <li><a href="https://www.youtube.com/watch?v=s1wFKTsSXa4">Old town road piano</a></li>
+ </li>
+ <li><a href="#">music</a>
+  
+ <li><a href="otherstuff.html">other stuff</a>
+  
+   <li><a href="https://www.youtube.com/channel/UCfJLBm74L0KW0GeccoqT6zg">My Youtube channel</a></li>
+   <li><a href="https://scratch.mit.edu/users/sushantanthegreat/">My scratch account</a></li>
+      <li><a href="https://github.com/sushantan/">My Github Account</a></li>
+
+  
+ </li>
+ <li><a href="blogpagr.html">Blogs</a>
+ 
+   <li><a href="blog.html">Mystery Chicken Blog</a></li>
+   <li><a href=""></a></li>
+      <li><a href=""></a></li>
+	  </div>
+	  
+
+
+ 
+  
+ 
+	  
+
+
+ 
+
+ 
+ 
+ 
+ 
+</ul>
+</div>
+<script>
+function myFunction() {
+  // Declare variables
+  var input, filter, ul, li, a, i;
+  input = document.getElementById("mySearch");
+  filter = input.value.toUpperCase();
+  ul = document.getElementById("myMenu");
+  li = ul.getElementsByTagName("li");
+
+  // Loop through all list items, and hide those who don't match the search query
+  for (i = 0; i < li.length; i++) {
+    a = li[i].getElementsByTagName("a")[0];
+    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+      li[i].style.display = "";
+    } else {
+      li[i].style.display = "none";
+    }
+  }
+}
+</script>
+
+
+
+
+</body>
+</html>
