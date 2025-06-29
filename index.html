@@ -352,7 +352,9 @@
                     <div class="contact-form">
                         <h3 class="form-title">Send me a Message</h3>
                         
-                        <form id="contact-form" class="static-form">
+                        <form id="contact-form" class="static-form" action="https://api.staticforms.xyz/submit" method="POST">
+						<input type="hidden" name="apiKey" value="sf_5b8d6d0128jmgge19kbcn6nl">
+						<input type="hidden" name="redirectTo" value="https://sushantan.github.io">
                             <div class="form-group">
                                 <label for="name" class="form-label">
                                     <i class="fas fa-user"></i>
