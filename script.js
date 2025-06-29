@@ -208,16 +208,151 @@ document.querySelectorAll('button, .hero-btn, .youtube-btn, .social-link, .theme
     });
 });
 
-// Google Form integration - handle form submission messages
-window.addEventListener('message', function(e) {
-    if (e.origin !== 'https://docs.google.com') return;
+// Contact Form Handling
+const contactForm = document.getElementById('contact-form');
+const successMessage = document.getElementById('form-success');
+const errorMessage = document.getElementById('form-error');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        const formObject = Object.fromEntries(formData);
+        
+        // Show loading state
+        const submitBtn = contactForm.querySelector('.form-submit-btn');
+        const originalText = submitBtn.innerHTML;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        submitBtn.disabled = true;
+        
+        // Hide previous messages
+        successMessage.style.display = 'none';
+        errorMessage.style.display = 'none';
+        
+        try {
+            // Simulate form submission (replace with actual form handling)
+            await simulateFormSubmission(formObject);
+            
+            // Show success message
+            successMessage.style.display = 'flex';
+            contactForm.reset();
+            
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+        } catch (error) {
+            // Show error message
+            errorMessage.style.display = 'flex';
+            console.error('Form submission error:', error);
+        } finally {
+            // Reset button state
+            submitBtn.innerHTML = originalText;
+            submitBtn.disabled = false;
+        }
+    });
+}
+
+// Simulate form submission (replace with actual backend integration)
+async function simulateFormSubmission(formData) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            // Simulate success (90% success rate for demo)
+            if (Math.random() > 0.1) {
+                console.log('Form submitted:', formData);
+                resolve();
+            } else {
+                reject(new Error('Simulated network error'));
+            }
+        }, 2000);
+    });
+}
+
+// Form validation enhancements
+const formInputs = document.querySelectorAll('.form-input, .form-select, .form-textarea');
+
+formInputs.forEach(input => {
+    // Add real-time validation feedback
+    input.addEventListener('blur', function() {
+        validateField(this);
+    });
     
-    // Handle Google Form submission success
-    if (e.data && e.data.type === 'hsFormCallback') {
-        // You can add custom success handling here
-        console.log('Form submitted successfully');
-    }
+    input.addEventListener('input', function() {
+        // Clear validation state on input
+        this.classList.remove('invalid');
+        const errorMsg = this.parentNode.querySelector('.field-error');
+        if (errorMsg) {
+            errorMsg.remove();
+        }
+    });
 });
+
+function validateField(field) {
+    const value = field.value.trim();
+    let isValid = true;
+    let errorMessage = '';
+    
+    // Remove existing error message
+    const existingError = field.parentNode.querySelector('.field-error');
+    if (existingError) {
+        existingError.remove();
+    }
+    
+    // Validate based on field type
+    if (field.hasAttribute('required') && !value) {
+        isValid = false;
+        errorMessage = 'This field is required';
+    } else if (field.type === 'email' && value) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(value)) {
+            isValid = false;
+            errorMessage = 'Please enter a valid email address';
+        }
+    }
+    
+    // Apply validation styling
+    if (!isValid) {
+        field.classList.add('invalid');
+        const errorDiv = document.createElement('div');
+        errorDiv.className = 'field-error';
+        errorDiv.textContent = errorMessage;
+        field.parentNode.appendChild(errorDiv);
+    } else {
+        field.classList.remove('invalid');
+    }
+    
+    return isValid;
+}
+
+// Add styles for form validation
+const validationStyles = `
+    .form-input.invalid,
+    .form-select.invalid,
+    .form-textarea.invalid {
+        border-color: var(--error-color);
+        box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+    }
+    
+    .field-error {
+        color: var(--error-color);
+        font-size: 12px;
+        margin-top: 4px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+    
+    .field-error::before {
+        content: "⚠";
+        font-size: 10px;
+    }
+`;
+
+// Inject validation styles
+const styleSheet = document.createElement('style');
+styleSheet.textContent = validationStyles;
+document.head.appendChild(styleSheet);
 
 // Add smooth scrolling behavior for better UX
 document.documentElement.style.scrollBehavior = 'smooth';
@@ -262,15 +397,43 @@ document.querySelectorAll('a, button').forEach(element => {
     });
 });
 
-// Add loading state for Google Form
-const googleForm = document.querySelector('.google-form');
-if (googleForm) {
-    googleForm.addEventListener('load', function() {
-        console.log('Google Form loaded successfully');
+// Auto-resize textarea
+const textarea = document.querySelector('.form-textarea');
+if (textarea) {
+    textarea.addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = Math.max(120, this.scrollHeight) + 'px';
     });
+}
+
+// Add character counter for textarea
+if (textarea) {
+    const maxLength = 1000;
+    textarea.setAttribute('maxlength', maxLength);
     
-    googleForm.addEventListener('error', function() {
-        console.error('Error loading Google Form');
-        // You could show a fallback message here
-    });
+    const counter = document.createElement('div');
+    counter.className = 'char-counter';
+    counter.style.cssText = `
+        font-size: 12px;
+        color: var(--text-quaternary);
+        text-align: right;
+        margin-top: 4px;
+    `;
+    
+    function updateCounter() {
+        const remaining = maxLength - textarea.value.length;
+        counter.textContent = `${remaining} characters remaining`;
+        
+        if (remaining < 50) {
+            counter.style.color = 'var(--warning-color)';
+        } else if (remaining < 10) {
+            counter.style.color = 'var(--error-color)';
+        } else {
+            counter.style.color = 'var(--text-quaternary)';
+        }
+    }
+    
+    textarea.addEventListener('input', updateCounter);
+    textarea.parentNode.appendChild(counter);
+    updateCounter();
 }

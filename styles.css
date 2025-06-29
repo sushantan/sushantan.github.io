@@ -12,6 +12,9 @@
     --accent-secondary: #f3f4f6;
     --border-color: #374151;
     --shadow-color: rgba(0, 0, 0, 0.3);
+    --success-color: #22c55e;
+    --error-color: #ef4444;
+    --warning-color: #eab308;
 }
 
 [data-theme="light"] {
@@ -28,6 +31,9 @@
     --accent-secondary: #1f2937;
     --border-color: #e5e7eb;
     --shadow-color: rgba(0, 0, 0, 0.1);
+    --success-color: #16a34a;
+    --error-color: #dc2626;
+    --warning-color: #ca8a04;
 }
 
 * {
@@ -777,19 +783,137 @@ body {
     color: #ffffff;
 }
 
-/* Google Form Integration */
-.google-form-wrapper {
-    margin-bottom: 24px;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
+/* Static Contact Form */
+.static-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
-.google-form {
-    width: 100%;
-    min-height: 600px;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-label i {
+    color: var(--text-tertiary);
+    font-size: 16px;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+    outline: none;
+    border-color: var(--text-primary);
+    background: var(--bg-quaternary);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="light"] .form-input:focus,
+[data-theme="light"] .form-select:focus,
+[data-theme="light"] .form-textarea:focus {
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+    color: var(--text-quaternary);
+}
+
+.form-select {
+    cursor: pointer;
+}
+
+.form-textarea {
+    resize: vertical;
+    min-height: 120px;
+    line-height: 1.5;
+}
+
+.form-submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 16px 32px;
+    background: var(--accent-primary);
+    color: var(--bg-primary);
     border: none;
-    background: var(--bg-primary);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 8px;
+}
+
+.form-submit-btn:hover {
+    background: var(--accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px var(--shadow-color);
+}
+
+.form-submit-btn:active {
+    transform: translateY(0);
+}
+
+.form-submit-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.form-message {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+    font-weight: 500;
+}
+
+.success-message {
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: var(--success-color);
+}
+
+.error-message {
+    background: rgba(239, 68, 68, 0.1);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    color: var(--error-color);
+}
+
+.form-message i {
+    font-size: 20px;
+}
+
+.form-message p {
+    margin: 0;
 }
 
 .form-note {
@@ -800,6 +924,7 @@ body {
     font-size: 14px;
     text-align: center;
     justify-content: center;
+    margin-top: 16px;
 }
 
 .form-note i {
@@ -944,8 +1069,9 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .google-form {
-        min-height: 500px;
+    .form-submit-btn {
+        padding: 14px 28px;
+        font-size: 15px;
     }
 }
 
@@ -990,8 +1116,16 @@ body {
         grid-template-columns: 1fr;
     }
 
-    .google-form {
-        min-height: 450px;
+    .form-input,
+    .form-select,
+    .form-textarea {
+        padding: 10px 14px;
+        font-size: 15px;
+    }
+
+    .form-submit-btn {
+        padding: 12px 24px;
+        font-size: 14px;
     }
 }
 
