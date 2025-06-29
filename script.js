@@ -208,68 +208,6 @@ document.querySelectorAll('button, .hero-btn, .youtube-btn, .social-link, .theme
     });
 });
 
-// Contact Form Handling
-const contactForm = document.getElementById('contact-form');
-const successMessage = document.getElementById('form-success');
-const errorMessage = document.getElementById('form-error');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(contactForm);
-        const formObject = Object.fromEntries(formData);
-        
-        // Show loading state
-        const submitBtn = contactForm.querySelector('.form-submit-btn');
-        const originalText = submitBtn.innerHTML;
-        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-        submitBtn.disabled = true;
-        
-        // Hide previous messages
-        successMessage.style.display = 'none';
-        errorMessage.style.display = 'none';
-        
-        try {
-            // Simulate form submission (replace with actual form handling)
-            await simulateFormSubmission(formObject);
-            
-            // Show success message
-            successMessage.style.display = 'flex';
-            contactForm.reset();
-            
-            // Scroll to success message
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-        } catch (error) {
-            // Show error message
-            errorMessage.style.display = 'flex';
-            console.error('Form submission error:', error);
-        } finally {
-            // Reset button state
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        }
-    });
-}
-
-// Simulate form submission (replace with actual backend integration)
-async function simulateFormSubmission(formData) {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-            // Simulate success (90% success rate for demo)
-            if (Math.random() > 0.1) {
-                console.log('Form submitted:', formData);
-                resolve();
-            } else {
-                reject(new Error('Simulated network error'));
-            }
-        }, 2000);
-    });
-}
-
-// Form validation enhancements
 const formInputs = document.querySelectorAll('.form-input, .form-select, .form-textarea');
 
 formInputs.forEach(input => {
