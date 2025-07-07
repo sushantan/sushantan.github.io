@@ -1,3 +1,29 @@
+// Opening Animation Controller
+document.addEventListener('DOMContentLoaded', function() {
+    const openingOverlay = document.getElementById('opening-overlay');
+    const mainContent = document.getElementById('main-content');
+    
+    // Prevent scrolling during animation
+    document.body.style.overflow = 'hidden';
+    
+    // Start the opening animation sequence
+    setTimeout(() => {
+        // Begin fade out of opening overlay
+        openingOverlay.classList.add('fade-out');
+        
+        // Show main content with animation
+        setTimeout(() => {
+            mainContent.classList.add('show');
+            document.body.style.overflow = 'auto';
+            
+            // Remove overlay from DOM after animation completes
+            setTimeout(() => {
+                openingOverlay.remove();
+            }, 800);
+        }, 400);
+    }, 6500); // Total animation duration: 6.5 seconds
+});
+
 // Theme Management
 const themeToggle = document.getElementById('theme-toggle');
 const body = document.body;

@@ -12,448 +12,503 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header id="header" class="header">
-        <nav class="nav">
-            <div class="nav-brand">Sushantan</div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#sports" class="nav-link">Sports</a>
-                <a href="#music" class="nav-link">Music</a>
-                <a href="#studies" class="nav-link">Studies</a>
-                <a href="#contact" class="nav-link">Contact</a>
+    <!-- Opening Animation Overlay -->
+    <div id="opening-overlay" class="opening-overlay">
+        <div class="opening-content">
+            <div class="logo-container">
+                <div class="logo-circle">
+                    <span class="logo-letter">S</span>
+                </div>
+                <div class="logo-lines">
+                    <div class="line line-1"></div>
+                    <div class="line line-2"></div>
+                    <div class="line line-3"></div>
+                </div>
             </div>
-            <div class="nav-controls">
-                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-                    <i class="fas fa-moon"></i>
+            <div class="name-reveal">
+                <h1 class="opening-name">
+                    <span class="letter" data-letter="S">S</span>
+                    <span class="letter" data-letter="u">u</span>
+                    <span class="letter" data-letter="s">s</span>
+                    <span class="letter" data-letter="h">h</span>
+                    <span class="letter" data-letter="a">a</span>
+                    <span class="letter" data-letter="n">n</span>
+                    <span class="letter" data-letter="t">t</span>
+                    <span class="letter" data-letter="a">a</span>
+                    <span class="letter" data-letter="n">n</span>
+                </h1>
+                <div class="tagline">
+                    <span class="tagline-text">Athlete</span>
+                    <span class="tagline-separator">•</span>
+                    <span class="tagline-text">Musician</span>
+                    <span class="tagline-separator">•</span>
+                    <span class="tagline-text">Student</span>
+                </div>
+            </div>
+            <div class="loading-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="loading-text">Loading Portfolio...</div>
+            </div>
+        </div>
+        <div class="particles-container">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+    </div>
+
+    <!-- Main Content (initially hidden) -->
+    <div id="main-content" class="main-content">
+        <!-- Header -->
+        <header id="header" class="header">
+            <nav class="nav">
+                <div class="nav-brand">Sushantan</div>
+                <div class="nav-menu" id="nav-menu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#sports" class="nav-link">Sports</a>
+                    <a href="#music" class="nav-link">Music</a>
+                    <a href="#studies" class="nav-link">Studies</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </div>
+                <div class="nav-controls">
+                    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="nav-toggle" id="nav-toggle">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Sushantan</h1>
+                <p class="hero-subtitle">Athlete • Musician • Student</p>
+                <p class="hero-description">
+                    Passionate about excellence in sports, music, and academics. 
+                    Dedicated to learning about machines and automobile
+                </p>
+                <button class="hero-btn" onclick="scrollToSection('sports')">
+                    Explore My Journey
+                    <i class="fas fa-chevron-down"></i>
                 </button>
-                <div class="nav-toggle" id="nav-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
             </div>
-        </nav>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1 class="hero-title">Sushantan</h1>
-            <p class="hero-subtitle">Athlete • Musician • Student</p>
-            <p class="hero-description">
-                Passionate about excellence in sports, music, and academics. 
-                Dedicated to learning about machines and automobile
-            </p>
-            <button class="hero-btn" onclick="scrollToSection('sports')">
-                Explore My Journey
+            <div class="hero-scroll">
                 <i class="fas fa-chevron-down"></i>
-            </button>
-        </div>
-        <div class="hero-scroll">
-            <i class="fas fa-chevron-down"></i>
-        </div>
-    </section>
-
-    <!-- Sports Section -->
-    <section id="sports" class="sports">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Sports Achievements</h2>
-                <p class="section-subtitle">Excellence in athletics through dedication, teamwork,continuous improvement and experience</p>
             </div>
+        </section>
 
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-users"></i>
+        <!-- Sports Section -->
+        <section id="sports" class="sports">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Sports Achievements</h2>
+                    <p class="section-subtitle">Excellence in athletics through dedication, teamwork,continuous improvement and experience</p>
+                </div>
+
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="achievement-title">Team Leadership</h3>
+                        <p class="achievement-desc">Ex School Team Captain of basketball team</p>
                     </div>
-                    <h3 class="achievement-title">Team Leadership</h3>
-                    <p class="achievement-desc">Ex School Team Captain of basketball team</p>
-                </div>
 
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-medal"></i>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3 class="achievement-title">Tournament Success</h3>
+                        <p class="achievement-desc">Placed second in APL interschool tournament</p>
                     </div>
-                    <h3 class="achievement-title">Tournament Success</h3>
-                    <p class="achievement-desc">Placed second in APL interschool tournament</p>
-                </div>
 
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-bullseye"></i>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3 class="achievement-title">Track & Field Excellence</h3>
+                        <p class="achievement-desc">Consistent placement in 100m, 200m races, long jump achievements</p>
                     </div>
-                    <h3 class="achievement-title">Track & Field Excellence</h3>
-                    <p class="achievement-desc">Consistent placement in 100m, 200m races, long jump achievements</p>
-                </div>
 
-                <div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3 class="achievement-title">Gold Medal Winner</h3>
-                    <p class="achievement-desc">Gold medal in shotput during class 12</p>
-                </div>
-				
-				<div class="achievement-card">
-                    <div class="achievement-icon">
-                        <i class="fas fa-basketball"></i>
-                    </div>
-                    <h3 class="achievement-title">Participation</h3>
-                    <p class="achievement-desc">Participated in the CISCE regional basketball tournament in thoothukudi</p>
-                </div>
-				
-            </div>
-
-            <div class="sports-experience">
-                <h3 class="sports-title">Sports Experience</h3>
-                <div class="sports-tags">
-                    <span class="sport-tag">Basketball</span>
-                    <span class="sport-tag">Football</span>
-                    <span class="sport-tag">Tennis</span>
-                    <span class="sport-tag">Cricket</span>
-                    <span class="sport-tag">Badminton</span>
-                    <span class="sport-tag">Table Tennis</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Music Section -->
-    <section id="music" class="music">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Musical Journey</h2>
-                <p class="section-subtitle">Pursuing excellence in music through structured learning and creative expression</p>
-            </div>
-
-            <div class="music-content">
-                <div class="music-grades">
-                    <div class="grades-header">
-                        <i class="fas fa-award"></i>
-                        <h3>Trinity College London</h3>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="achievement-title">Gold Medal Winner</h3>
+                        <p class="achievement-desc">Gold medal in shotput during class 12</p>
                     </div>
                     
-                    <div class="grades-list">
-                        <div class="grade-item completed">
-                            <span class="grade-name">Initial</span>
-                            <div class="grade-status">
-                                <i class="fas fa-check"></i>
-                            </div>
+                    <div class="achievement-card">
+                        <div class="achievement-icon">
+                            <i class="fas fa-basketball"></i>
                         </div>
-                        <div class="grade-item completed">
-                            <span class="grade-name">Grade 1</span>
-                            <div class="grade-status">
-                                <i class="fas fa-check"></i>
-                            </div>
-                        </div>
-                        <div class="grade-item completed">
-                            <span class="grade-name">Grade 2</span>
-                            <div class="grade-status">
-                                <i class="fas fa-check"></i>
-                            </div>
-                        </div>
-                        <div class="grade-item completed">
-                            <span class="grade-name">Grade 4</span>
-                            <div class="grade-status">
-                                <i class="fas fa-check"></i>
-                            </div>
-                        </div>
-                        <div class="grade-item completed">
-                            <span class="grade-name">Grade 6</span>
-                            <div class="grade-status">
-                                <i class="fas fa-check"></i>
-                            </div>
-                        </div>
-                        <div class="grade-item current">
-                            <span class="grade-name">Grade 8</span>
-                            <div class="grade-status">
-                                <div class="pulse-dot"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="youtube-section">
-                    <div class="youtube-header">
-                        <i class="fab fa-youtube"></i>
-                        <h3>YouTube Channel</h3>
+                        <h3 class="achievement-title">Participation</h3>
+                        <p class="achievement-desc">Participated in the CISCE regional basketball tournament in thoothukudi</p>
                     </div>
                     
-                    <p class="youtube-desc">Sharing my musical journey and performances with the world</p>
-                    
-                    <div class="youtube-stats">
-                        <div class="stat-item">
-                            <span class="stat-label">Channel Highlights</span>
-                            <i class="fas fa-play"></i>
-                        </div>
-                        <p class="stat-text">Over 50,000 views on featured video</p>
-                        <p class="stat-subtext">Showcasing musical performances and progress</p>
-                    </div>
-
-                    <a href="https://www.youtube.com/@SushantanS" target="_blank" class="youtube-btn">
-                        <i class="fab fa-youtube"></i>
-                        Visit Channel
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Studies Section -->
-    <section id="studies" class="studies">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Academic Excellence</h2>
-                <p class="section-subtitle">Committed to academic achievement and continuous learning</p>
-            </div>
-
-            <div class="education-list">
-                <div class="education-item completed">
-                    <div class="education-content">
-                        <div class="education-icon">
-                            <i class="fas fa-book-open"></i>
-                        </div>
-                        <div class="education-info">
-                            <h3 class="education-level">Class 10 (ICSE)</h3>
-                            <p class="education-board">ICSE Board</p>
-                        </div>
-                    </div>
-                    <div class="education-result">
-                        <div class="percentage">85%</div>
-                        <div class="status completed-status">Completed</div>
-                    </div>
                 </div>
 
-                <div class="education-item completed">
-                    <div class="education-content">
-                        <div class="education-icon">
+                <div class="sports-experience">
+                    <h3 class="sports-title">Sports Experience</h3>
+                    <div class="sports-tags">
+                        <span class="sport-tag">Basketball</span>
+                        <span class="sport-tag">Football</span>
+                        <span class="sport-tag">Tennis</span>
+                        <span class="sport-tag">Cricket</span>
+                        <span class="sport-tag">Badminton</span>
+                        <span class="sport-tag">Table Tennis</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music Section -->
+        <section id="music" class="music">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Musical Journey</h2>
+                    <p class="section-subtitle">Pursuing excellence in music through structured learning and creative expression</p>
+                </div>
+
+                <div class="music-content">
+                    <div class="music-grades">
+                        <div class="grades-header">
                             <i class="fas fa-award"></i>
-                        </div>
-                        <div class="education-info">
-                            <h3 class="education-level">Class 12 (ISC)</h3>
-                            <p class="education-board">ISC Board - Science with Math & Computer Science</p>
-                        </div>
-                    </div>
-                    <div class="education-result">
-                        <div class="percentage">91%</div>
-                        <div class="status completed-status">Completed</div>
-                    </div>
-                </div>
-
-                <div class="education-item pending">
-                    <div class="education-content">
-                        <div class="education-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div class="education-info">
-                            <h3 class="education-level">College</h3>
-                            <p class="education-board">Admission in Progress</p>
-                            <p class="pending-text">Currently pursuing college admission</p>
-                        </div>
-                    </div>
-                    <div class="education-result">
-                        <div class="percentage">TBD</div>
-                        <div class="status pending-status">In Progress</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="academic-focus">
-                <div class="focus-header">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Academic Interests</h3>
-                </div>
-                <div class="focus-grid">
-                    <div class="focus-item">
-                        <div class="focus-icon">
-                            <i class="fas fa-calculator"></i>
-                        </div>
-                        <div class="focus-title">Mathematics</div>
-                        <p class="focus-desc">Strong passion for mathematical concepts, problem-solving, and analytical thinking</p>
-                    </div>
-                    <div class="focus-item">
-                        <div class="focus-icon">
-                            <i class="fas fa-atom"></i>
-                        </div>
-                        <div class="focus-title">Physics</div>
-                        <p class="focus-desc">Deep interest in understanding the fundamental laws that govern our universe and how they work</p>
-                    </div>
-                    <div class="focus-item">
-                        <div class="focus-icon">
-                            <i class="fas fa-cogs"></i>
-                        </div>
-                        <div class="focus-title">Machinery</div>
-                        <p class="focus-desc">Fascinated by mechanical systems, engineering principles, and how things work</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <p class="section-subtitle">Let's connect and explore opportunities together</p>
-            </div>
-
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3 class="contact-title">Contact Information</h3>
-                    
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <p class="contact-label">Email</p>
-                            <p class="contact-value">sushantans21@gmail.com</p>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                            <h3>Trinity College London</h3>
                         </div>
                         
+                        <div class="grades-list">
+                            <div class="grade-item completed">
+                                <span class="grade-name">Initial</span>
+                                <div class="grade-status">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="grade-item completed">
+                                <span class="grade-name">Grade 1</span>
+                                <div class="grade-status">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="grade-item completed">
+                                <span class="grade-name">Grade 2</span>
+                                <div class="grade-status">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="grade-item completed">
+                                <span class="grade-name">Grade 4</span>
+                                <div class="grade-status">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="grade-item completed">
+                                <span class="grade-name">Grade 6</span>
+                                <div class="grade-status">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                            </div>
+                            <div class="grade-item current">
+                                <span class="grade-name">Grade 8</span>
+                                <div class="grade-status">
+                                    <div class="pulse-dot"></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <p class="contact-label">Location</p>
-                            <p class="contact-value">Chennai,India</p>
-                        </div>
-                    </div>
-
-                    <div class="social-section">
-                        <h4 class="social-title">Follow Me</h4>
-                        <div class="social-links">
-                            <a href="https://www.youtube.com/@SushantanS" target="_blank" class="social-link youtube">
-                                <i class="fab fa-youtube"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/in/sushantan-s-980a38362/" class="social-link linkedin">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://github.com/sushantan" class="social-link github">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://www.instagram.com/_sushantan/" class="social-link instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact-form-container">
-                    <div class="contact-form">
-                        <h3 class="form-title">Send me a Message</h3>
-                        
-                        <form id="contact-form" class="static-form" action="https://api.staticforms.xyz/submit" method="POST">
-						<input type="hidden" name="apiKey" value="sf_5b8d6d0128jmgge19kbcn6nl">
-						<input type="hidden" name="redirectTo" value="https://sushantan.github.io">
-                            <div class="form-group">
-                                <label for="name" class="form-label">
-                                    <i class="fas fa-user"></i>
-                                    Full Name
-                                </label>
-                                <input 
-                                    type="text" 
-                                    id="name" 
-                                    name="name" 
-                                    class="form-input" 
-                                    placeholder="Enter your full name"
-                                    required
-                                >
-                            </div>
-
-                            <div class="form-group">
-                                <label for="email" class="form-label">
-                                    <i class="fas fa-envelope"></i>
-                                    Email Address
-                                </label>
-                                <input 
-                                    type="email" 
-                                    id="email" 
-                                    name="email" 
-                                    class="form-input" 
-                                    placeholder="Enter your email address"
-                                    required
-                                >
-                            </div>
-
-                            <div class="form-group">
-                                <label for="subject" class="form-label">
-                                    <i class="fas fa-tag"></i>
-                                    Subject
-                                </label>
-                                <select id="subject" name="subject" class="form-select" required>
-                                    <option value="">Select a subject</option>
-                                    <option value="collaboration">Collaboration Opportunity</option>
-                                    <option value="sports">Sports Related</option>
-                                    <option value="music">Music Related</option>
-                                    <option value="academic">Academic Discussion</option>
-                                    <option value="general">General Inquiry</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="message" class="form-label">
-                                    <i class="fas fa-comment"></i>
-                                    Message
-                                </label>
-                                <textarea 
-                                    id="message" 
-                                    name="message" 
-                                    class="form-textarea" 
-                                    placeholder="Write your message here..."
-                                    rows="6"
-                                    required
-                                ></textarea>
-                            </div>
-
-                            <button type="submit" class="form-submit-btn">
-                                <i class="fas fa-paper-plane"></i>
-                                Send Message
-                            </button>
-                        </form>
-                        
-                        <div id="form-success" class="form-message success-message" style="display: none;">
-                            <i class="fas fa-check-circle"></i>
-                            <p>Thank you for your message! I'll get back to you soon.</p>
-                        </div>
-
-                        <div id="form-error" class="form-message error-message" style="display: none;">
-                            <i class="fas fa-exclamation-circle"></i>
-                            <p>There was an error sending your message. Please try again or contact me directly via email.</p>
+                    <div class="youtube-section">
+                        <div class="youtube-header">
+                            <i class="fab fa-youtube"></i>
+                            <h3>YouTube Channel</h3>
                         </div>
                         
-                        <p class="form-note">
-                            <i class="fas fa-info-circle"></i>
-                            Your message will be sent directly to my email inbox
-                        </p>
+                        <p class="youtube-desc">Sharing my musical journey and performances with the world</p>
+                        
+                        <div class="youtube-stats">
+                            <div class="stat-item">
+                                <span class="stat-label">Channel Highlights</span>
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <p class="stat-text">Over 50,000 views on featured video</p>
+                            <p class="stat-subtext">Showcasing musical performances and progress</p>
+                        </div>
+
+                        <a href="https://www.youtube.com/@SushantanS" target="_blank" class="youtube-btn">
+                            <i class="fab fa-youtube"></i>
+                            Visit Channel
+                        </a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">Sushantan</div>
-                <div class="footer-text">
-                    <!--<p>&copy; 2024 Sushantan. All rights reserved.</p>-->
-                    <p>Website made by Sushantan with help of AI</p>
+        <!-- Studies Section -->
+        <section id="studies" class="studies">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Academic Excellence</h2>
+                    <p class="section-subtitle">Committed to academic achievement and continuous learning</p>
+                </div>
+
+                <div class="education-list">
+                    <div class="education-item completed">
+                        <div class="education-content">
+                            <div class="education-icon">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="education-info">
+                                <h3 class="education-level">Class 10 (ICSE)</h3>
+                                <p class="education-board">ICSE Board</p>
+                            </div>
+                        </div>
+                        <div class="education-result">
+                            <div class="percentage">85%</div>
+                            <div class="status completed-status">Completed</div>
+                        </div>
+                    </div>
+
+                    <div class="education-item completed">
+                        <div class="education-content">
+                            <div class="education-icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="education-info">
+                                <h3 class="education-level">Class 12 (ISC)</h3>
+                                <p class="education-board">ISC Board - Science with Math & Computer Science</p>
+                            </div>
+                        </div>
+                        <div class="education-result">
+                            <div class="percentage">91%</div>
+                            <div class="status completed-status">Completed</div>
+                        </div>
+                    </div>
+
+                    <div class="education-item pending">
+                        <div class="education-content">
+                            <div class="education-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="education-info">
+                                <h3 class="education-level">College</h3>
+                                <p class="education-board">Admission in Progress</p>
+                                <p class="pending-text">Currently pursuing college admission</p>
+                            </div>
+                        </div>
+                        <div class="education-result">
+                            <div class="percentage">TBD</div>
+                            <div class="status pending-status">In Progress</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="academic-focus">
+                    <div class="focus-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>Academic Interests</h3>
+                    </div>
+                    <div class="focus-grid">
+                        <div class="focus-item">
+                            <div class="focus-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <div class="focus-title">Mathematics</div>
+                            <p class="focus-desc">Strong passion for mathematical concepts, problem-solving, and analytical thinking</p>
+                        </div>
+                        <div class="focus-item">
+                            <div class="focus-icon">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                            <div class="focus-title">Physics</div>
+                            <p class="focus-desc">Deep interest in understanding the fundamental laws that govern our universe and how they work</p>
+                        </div>
+                        <div class="focus-item">
+                            <div class="focus-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                            <div class="focus-title">Machinery</div>
+                            <p class="focus-desc">Fascinated by mechanical systems, engineering principles, and how things work</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Get In Touch</h2>
+                    <p class="section-subtitle">Let's connect and explore opportunities together</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3 class="contact-title">Contact Information</h3>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <p class="contact-label">Email</p>
+                                <p class="contact-value">sushantans21@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <p class="contact-label">Location</p>
+                                <p class="contact-value">Chennai,India</p>
+                            </div>
+                        </div>
+
+                        <div class="social-section">
+                            <h4 class="social-title">Follow Me</h4>
+                            <div class="social-links">
+                                <a href="https://www.youtube.com/@SushantanS" target="_blank" class="social-link youtube">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/sushantan-s-980a38362/" class="social-link linkedin">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/sushantan" class="social-link github">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://www.instagram.com/_sushantan/" class="social-link instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form-container">
+                        <div class="contact-form">
+                            <h3 class="form-title">Send me a Message</h3>
+                            
+                            <form id="contact-form" class="static-form" action="https://api.staticforms.xyz/submit" method="POST">
+                            <input type="hidden" name="apiKey" value="sf_5b8d6d0128jmgge19kbcn6nl">
+                            <input type="hidden" name="redirectTo" value="https://sushantan.github.io">
+                                <div class="form-group">
+                                    <label for="name" class="form-label">
+                                        <i class="fas fa-user"></i>
+                                        Full Name
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="name" 
+                                        name="name" 
+                                        class="form-input" 
+                                        placeholder="Enter your full name"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email" class="form-label">
+                                        <i class="fas fa-envelope"></i>
+                                        Email Address
+                                    </label>
+                                    <input 
+                                        type="email" 
+                                        id="email" 
+                                        name="email" 
+                                        class="form-input" 
+                                        placeholder="Enter your email address"
+                                        required
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subject" class="form-label">
+                                        <i class="fas fa-tag"></i>
+                                        Subject
+                                    </label>
+                                    <select id="subject" name="subject" class="form-select" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="collaboration">Collaboration Opportunity</option>
+                                        <option value="sports">Sports Related</option>
+                                        <option value="music">Music Related</option>
+                                        <option value="academic">Academic Discussion</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message" class="form-label">
+                                        <i class="fas fa-comment"></i>
+                                        Message
+                                    </label>
+                                    <textarea 
+                                        id="message" 
+                                        name="message" 
+                                        class="form-textarea" 
+                                        placeholder="Write your message here..."
+                                        rows="6"
+                                        required
+                                    ></textarea>
+                                </div>
+
+                                <button type="submit" class="form-submit-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Message
+                                </button>
+                            </form>
+                            
+                            <div id="form-success" class="form-message success-message" style="display: none;">
+                                <i class="fas fa-check-circle"></i>
+                                <p>Thank you for your message! I'll get back to you soon.</p>
+                            </div>
+
+                            <div id="form-error" class="form-message error-message" style="display: none;">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <p>There was an error sending your message. Please try again or contact me directly via email.</p>
+                            </div>
+                            
+                            <p class="form-note">
+                                <i class="fas fa-info-circle"></i>
+                                Your message will be sent directly to my email inbox
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-brand">Sushantan</div>
+                    <div class="footer-text">
+                        <!--<p>&copy; 2024 Sushantan. All rights reserved.</p>-->
+                        <p>Website made by Sushantan with help of AI</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -52,6 +52,7 @@ body {
     color: var(--text-primary);
     background-color: var(--bg-primary);
     transition: background-color 0.3s ease, color 0.3s ease;
+    overflow-x: hidden;
 }
 
 .container {
@@ -76,6 +77,461 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--text-tertiary);
+}
+
+/* Opening Animation Styles */
+.opening-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #000000 100%);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.opening-overlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.opening-content {
+    text-align: center;
+    position: relative;
+    z-index: 10001;
+}
+
+.logo-container {
+    position: relative;
+    margin-bottom: 60px;
+    animation: logoEntrance 2s ease-out;
+}
+
+.logo-circle {
+    width: 120px;
+    height: 120px;
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    position: relative;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1));
+    animation: circleGlow 3s ease-in-out infinite;
+}
+
+.logo-letter {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+    animation: letterPulse 2s ease-in-out infinite;
+}
+
+.logo-lines {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 200px;
+}
+
+.line {
+    position: absolute;
+    background: linear-gradient(90deg, transparent, #ffffff, transparent);
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform-origin: center;
+    opacity: 0;
+}
+
+.line-1 {
+    transform: translate(-50%, -50%) rotate(0deg);
+    animation: lineRotate1 4s linear infinite;
+}
+
+.line-2 {
+    transform: translate(-50%, -50%) rotate(120deg);
+    animation: lineRotate2 4s linear infinite;
+}
+
+.line-3 {
+    transform: translate(-50%, -50%) rotate(240deg);
+    animation: lineRotate3 4s linear infinite;
+}
+
+.name-reveal {
+    margin-bottom: 40px;
+    opacity: 0;
+    animation: nameReveal 1s ease-out 1.5s forwards;
+}
+
+.opening-name {
+    font-size: 64px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+}
+
+.letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(50px) rotateX(90deg);
+    animation: letterDrop 0.8s ease-out forwards;
+}
+
+.letter:nth-child(1) { animation-delay: 2s; }
+.letter:nth-child(2) { animation-delay: 2.1s; }
+.letter:nth-child(3) { animation-delay: 2.2s; }
+.letter:nth-child(4) { animation-delay: 2.3s; }
+.letter:nth-child(5) { animation-delay: 2.4s; }
+.letter:nth-child(6) { animation-delay: 2.5s; }
+.letter:nth-child(7) { animation-delay: 2.6s; }
+.letter:nth-child(8) { animation-delay: 2.7s; }
+.letter:nth-child(9) { animation-delay: 2.8s; }
+
+.tagline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    opacity: 0;
+    animation: taglineSlide 1s ease-out 3.2s forwards;
+}
+
+.tagline-text {
+    color: #d1d5db;
+    font-size: 18px;
+    font-weight: 500;
+    transform: translateX(-20px);
+    animation: taglineTextSlide 0.6s ease-out forwards;
+}
+
+.tagline-text:nth-child(1) { animation-delay: 3.4s; }
+.tagline-text:nth-child(3) { animation-delay: 3.6s; }
+.tagline-text:nth-child(5) { animation-delay: 3.8s; }
+
+.tagline-separator {
+    color: #6b7280;
+    font-size: 16px;
+    opacity: 0;
+    animation: separatorFade 0.3s ease-out forwards;
+}
+
+.tagline-separator:nth-child(2) { animation-delay: 3.5s; }
+.tagline-separator:nth-child(4) { animation-delay: 3.7s; }
+
+.loading-progress {
+    margin-top: 60px;
+    opacity: 0;
+    animation: progressShow 0.8s ease-out 4s forwards;
+}
+
+.progress-bar {
+    width: 300px;
+    height: 3px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 2px;
+    margin: 0 auto 16px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ffffff, #d1d5db);
+    border-radius: 2px;
+    width: 0%;
+    animation: progressFill 2s ease-out 4.2s forwards;
+}
+
+.loading-text {
+    color: #9ca3af;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    animation: textPulse 1.5s ease-in-out infinite;
+}
+
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 10000;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    animation: particleFloat 8s linear infinite;
+}
+
+.particle:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 6s;
+}
+
+.particle:nth-child(2) {
+    left: 20%;
+    animation-delay: 1s;
+    animation-duration: 8s;
+}
+
+.particle:nth-child(3) {
+    left: 30%;
+    animation-delay: 2s;
+    animation-duration: 7s;
+}
+
+.particle:nth-child(4) {
+    left: 40%;
+    animation-delay: 3s;
+    animation-duration: 9s;
+}
+
+.particle:nth-child(5) {
+    left: 60%;
+    animation-delay: 1.5s;
+    animation-duration: 6.5s;
+}
+
+.particle:nth-child(6) {
+    left: 70%;
+    animation-delay: 2.5s;
+    animation-duration: 8.5s;
+}
+
+.particle:nth-child(7) {
+    left: 80%;
+    animation-delay: 0.5s;
+    animation-duration: 7.5s;
+}
+
+.particle:nth-child(8) {
+    left: 90%;
+    animation-delay: 3.5s;
+    animation-duration: 6.8s;
+}
+
+.main-content {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.main-content.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Opening Animation Keyframes */
+@keyframes logoEntrance {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(180deg);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.1) rotate(90deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes circleGlow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
+    }
+}
+
+@keyframes letterPulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes lineRotate1 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(0deg) scale(0);
+    }
+    25% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(90deg) scale(1);
+    }
+    75% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(270deg) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(360deg) scale(0);
+    }
+}
+
+@keyframes lineRotate2 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(120deg) scale(0);
+    }
+    25% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(210deg) scale(1);
+    }
+    75% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(390deg) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(480deg) scale(0);
+    }
+}
+
+@keyframes lineRotate3 {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(240deg) scale(0);
+    }
+    25% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(330deg) scale(1);
+    }
+    75% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(510deg) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) rotate(600deg) scale(0);
+    }
+}
+
+@keyframes nameReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes letterDrop {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) rotateX(90deg);
+    }
+    50% {
+        opacity: 1;
+        transform: translateY(-10px) rotateX(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+    }
+}
+
+@keyframes taglineSlide {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes taglineTextSlide {
+    0% {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes separatorFade {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes progressShow {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes progressFill {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes textPulse {
+    0%, 100% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes particleFloat {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
 }
 
 /* Header */
@@ -1012,6 +1468,38 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .opening-name {
+        font-size: 48px;
+        letter-spacing: 2px;
+    }
+
+    .logo-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .logo-letter {
+        font-size: 40px;
+    }
+
+    .logo-lines {
+        width: 160px;
+        height: 160px;
+    }
+
+    .tagline {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .tagline-separator {
+        display: none;
+    }
+
+    .progress-bar {
+        width: 250px;
+    }
+
     .nav-menu {
         position: fixed;
         top: 70px;
@@ -1076,6 +1564,29 @@ body {
 }
 
 @media (max-width: 480px) {
+    .opening-name {
+        font-size: 36px;
+        letter-spacing: 1px;
+    }
+
+    .logo-circle {
+        width: 80px;
+        height: 80px;
+    }
+
+    .logo-letter {
+        font-size: 32px;
+    }
+
+    .logo-lines {
+        width: 120px;
+        height: 120px;
+    }
+
+    .progress-bar {
+        width: 200px;
+    }
+
     .container {
         padding: 0 16px;
     }
