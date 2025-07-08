@@ -2,30 +2,21 @@
 document.addEventListener('DOMContentLoaded', function() {
     const openingOverlay = document.getElementById('opening-overlay');
     const mainContent = document.getElementById('main-content');
-    const nameContainer = document.querySelector('.name-container');
     
     // Prevent scrolling during animation
     document.body.style.overflow = 'hidden';
     
-    // Start the opening animation sequence
+    // After animation completes, fade out overlay and show main content
     setTimeout(() => {
-        // Start transitioning the overlay background
-        openingOverlay.classList.add('transitioning');
+        openingOverlay.classList.add('fade-out');
+        mainContent.classList.add('show');
         
-        // Allow scrolling and show content
+        // Allow scrolling
         setTimeout(() => {
             document.body.style.overflow = 'auto';
-            
-            // Remove overlay after transition completes, but keep name container
-            setTimeout(() => {
-                if (openingOverlay && nameContainer) {
-                    // Move name container to body before removing overlay
-                    document.body.appendChild(nameContainer);
-                    openingOverlay.remove();
-                }
-            }, 1000);
-        }, 500);
-    }, 1700); // Total animation duration: 1.7 seconds
+            openingOverlay.remove();
+        }, 800);
+    }, 2000); // Total animation duration: 2 seconds
 });
 
 // Theme Management

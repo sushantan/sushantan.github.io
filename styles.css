@@ -92,36 +92,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 1;
-    visibility: visible;
-    transition: background 0.8s ease;
-}
-
-.opening-overlay.transitioning {
-    background: transparent;
-    z-index: 1;
+    transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
 .opening-content {
     text-align: center;
-    position: relative;
-    z-index: 10001;
-}
-
-.name-container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    animation: containerFadeIn 0.3s ease-out 0.2s forwards;
-    z-index: 10001;
-    transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.opening-overlay.transitioning .name-container {
-    top: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .opening-name {
@@ -132,6 +107,7 @@ body {
     font-size: clamp(48px, 8vw, 112px);
     font-weight: 200;
     letter-spacing: 4px;
+    margin-bottom: 48px;
 }
 
 .letter {
@@ -140,7 +116,6 @@ body {
     color: #1a1a1a;
     text-shadow: none;
     opacity: 1;
-    transition: all 0.3s ease;
 }
 
 /* Sequential letter lighting animation - flows from S to N */
@@ -153,22 +128,10 @@ body {
 .letter:nth-child(7) { animation: letterLightUp 0.2s ease-out 1.1s forwards; }
 .letter:nth-child(8) { animation: letterLightUp 0.2s ease-out 1.2s forwards; }
 .letter:nth-child(9) { animation: letterLightUp 0.2s ease-out 1.3s forwards; }
-}
 
 .loading-container {
-    position: fixed;
-    bottom: 40%;
-    left: 50%;
-    transform: translateX(-50%);
     opacity: 0;
     animation: loadingFadeIn 0.3s ease-out 0.5s forwards;
-    z-index: 10001;
-    transition: opacity 0.4s ease;
-}
-
-.opening-overlay.transitioning .loading-container {
-    opacity: 0;
-    pointer-events: none;
 }
 
 .loading-bar-container {
@@ -194,10 +157,18 @@ body {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
+.opening-overlay.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
 .main-content {
-    position: relative;
-    z-index: 1;
-    background: var(--bg-primary);
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.main-content.show {
+    opacity: 1;
 }
 
 
@@ -351,23 +322,12 @@ body {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    padding-top: 120px;
+    padding-top: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-primary) 50%, var(--bg-tertiary) 100%);
-    opacity: 0;
-    animation: heroReveal 0.8s ease-out 2.2s forwards;
-}
-
-@keyframes heroReveal {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
 }
 .hero::before {
     content: '';
@@ -378,15 +338,30 @@ body {
 
 .hero-content {
     position: relative;
-    z-index: 10;
     text-align: center;
     padding: 0 24px;
     animation: fadeIn 0.8s ease-out;
 }
 
 .hero-title {
-    /* Hero title is now handled by the persistent name container */
-    display: none;
+    font-size: clamp(48px, 8vw, 112px);
+    font-weight: 200;
+    letter-spacing: 4px;
+    color: var(--text-primary);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: heroTitleReveal 0.8s ease-out 0.5s forwards;
+}
+
+@keyframes heroTitleReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .hero-subtitle {
@@ -394,10 +369,9 @@ body {
     font-weight: 300;
     letter-spacing: 1px;
     color: var(--text-secondary);
-    margin-top: 80px;
     margin-bottom: 32px;
     opacity: 0;
-    animation: heroSubtitleReveal 0.8s ease-out 2.7s forwards;
+    animation: heroSubtitleReveal 0.8s ease-out 0.7s forwards;
 }
 
 @keyframes heroSubtitleReveal {
@@ -422,7 +396,7 @@ body {
     margin-right: auto;
     line-height: 1.7;
     opacity: 0;
-    animation: heroDescReveal 0.8s ease-out 2.9s forwards;
+    animation: heroDescReveal 0.8s ease-out 0.9s forwards;
 }
 
 @keyframes heroDescReveal {
@@ -451,7 +425,7 @@ body {
     transition: all 0.3s ease;
     text-decoration: none;
     opacity: 0;
-    animation: heroBtnReveal 0.8s ease-out 3.1s forwards;
+    animation: heroBtnReveal 0.8s ease-out 1.1s forwards;
 }
 
 @keyframes heroBtnReveal {
@@ -479,7 +453,7 @@ body {
     font-size: 32px;
     animation: bounce 2s infinite;
     opacity: 0;
-    animation: heroScrollReveal 0.8s ease-out 3.3s forwards, bounce 2s infinite 4.1s;
+    animation: heroScrollReveal 0.8s ease-out 1.3s forwards, bounce 2s infinite 2.1s;
 }
 
 @keyframes heroScrollReveal {
