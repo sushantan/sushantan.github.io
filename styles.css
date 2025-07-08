@@ -130,40 +130,96 @@ body {
 
 .car {
     position: relative;
-    width: 120px;
-    height: 50px;
+    width: 160px;
+    height: 60px;
 }
 
 .car-body {
     position: absolute;
-    bottom: 15px;
-    left: 10px;
-    width: 100px;
-    height: 25px;
-    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
-    border-radius: 12px 12px 8px 8px;
-    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+    bottom: 12px;
+    left: 20px;
+    width: 120px;
+    height: 20px;
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    border-radius: 2px;
+    box-shadow: 0 4px 20px rgba(220, 38, 38, 0.5);
+}
+
+/* F1 Nose Cone */
+.car-body::before {
+    content: '';
+    position: absolute;
+    left: -25px;
+    top: 2px;
+    width: 30px;
+    height: 16px;
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+    clip-path: polygon(0% 50%, 100% 20%, 100% 80%);
+    border-radius: 2px 0 0 2px;
+}
+
+/* F1 Rear Wing */
+.car-body::after {
+    content: '';
+    position: absolute;
+    right: -15px;
+    top: -8px;
+    width: 20px;
+    height: 35px;
+    background: linear-gradient(135deg, #dc2626, #7f1d1d);
+    clip-path: polygon(0% 0%, 100% 20%, 100% 80%, 0% 100%);
+    border-radius: 0 2px 2px 0;
 }
 
 .car-windshield {
     position: absolute;
-    top: -8px;
-    left: 15px;
-    width: 35px;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 8px 8px 0 0;
-    border: 2px solid #333;
+    top: -6px;
+    left: 40px;
+    width: 25px;
+    height: 8px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 2px;
+    border: 1px solid #1f2937;
 }
 
 .car-roof {
     position: absolute;
-    top: -12px;
-    left: 20px;
-    width: 25px;
+    top: -10px;
+    left: 35px;
+    width: 35px;
+    height: 12px;
+    background: linear-gradient(135deg, #dc2626, #991b1b);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* F1 Front Wing */
+.car-roof::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 15px;
+    width: 45px;
+    height: 4px;
+    background: linear-gradient(135deg, #374151, #1f2937);
+    border-radius: 2px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* F1 Side Pods */
+.car-roof::after {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    width: 15px;
     height: 8px;
-    background: linear-gradient(135deg, #ff8e8e, #ff6b6b);
-    border-radius: 6px 6px 0 0;
+    background: linear-gradient(135deg, #dc2626, #7f1d1d);
+    border-radius: 1px;
+    box-shadow: 
+        0 0 0 1px #991b1b,
+        20px 0 0 0 #dc2626,
+        20px 0 0 1px #991b1b;
 }
 
 .car-wheels {
@@ -174,20 +230,21 @@ body {
 
 .wheel {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background: radial-gradient(circle, #333 30%, #666 70%, #333 100%);
+    width: 24px;
+    height: 24px;
+    background: radial-gradient(circle, #1f2937 20%, #4b5563 50%, #1f2937 80%);
     border-radius: 50%;
-    border: 3px solid #222;
+    border: 2px solid #111827;
     animation: wheelSpin 0.3s linear infinite;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .wheel-front {
-    right: 5px;
+    right: 8px;
 }
 
 .wheel-rear {
-    left: 15px;
+    left: 18px;
 }
 
 .car-exhaust {
@@ -195,18 +252,18 @@ body {
     bottom: 20px;
     left: 0;
     width: 8px;
-    height: 4px;
-    background: #444;
+    height: 3px;
+    background: #374151;
     border-radius: 2px;
 }
 
 .car-exhaust::after {
     content: '';
     position: absolute;
-    left: -10px;
-    top: -2px;
-    width: 15px;
-    height: 8px;
+    left: -8px;
+    top: -1px;
+    width: 12px;
+    height: 5px;
     background: rgba(255, 255, 255, 0.3);
     border-radius: 50%;
     animation: exhaust 0.5s ease-in-out infinite;
