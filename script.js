@@ -2,29 +2,29 @@
 document.addEventListener('DOMContentLoaded', function() {
     const openingOverlay = document.getElementById('opening-overlay');
     const mainContent = document.getElementById('main-content');
-    const heroTitle = document.querySelector('.hero-title');
-    const openingName = document.querySelector('.opening-name');
+    const nameContainer = document.querySelector('.name-container');
     
     // Prevent scrolling during animation
     document.body.style.overflow = 'hidden';
     
     // Start the opening animation sequence
     setTimeout(() => {
-        // Start the seamless transition
-        openingOverlay.classList.add('transition-start');
+        // Start transitioning the overlay background
+        openingOverlay.classList.add('transitioning');
         
-        // Show main content with animation
+        // Allow scrolling and show content
         setTimeout(() => {
-            mainContent.classList.add('show');
             document.body.style.overflow = 'auto';
             
-            // Remove overlay from DOM after animation completes
+            // Remove overlay after transition completes, but keep name container
             setTimeout(() => {
-                if (openingOverlay) {
+                if (openingOverlay && nameContainer) {
+                    // Move name container to body before removing overlay
+                    document.body.appendChild(nameContainer);
                     openingOverlay.remove();
                 }
-            }, 800);
-        }, 200);
+            }, 1000);
+        }, 500);
     }, 1700); // Total animation duration: 1.7 seconds
 });
 
