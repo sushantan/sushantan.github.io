@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Remove overlay from DOM after animation completes
             setTimeout(() => {
                 openingOverlay.remove();
-            }, 600);
-        }, 300);
+            }, 1200);
+        }, 400);
     }, 1700); // Total animation duration: 1.7 seconds
 });
 

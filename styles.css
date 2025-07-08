@@ -47,7 +47,8 @@ html {
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-weight: 300;
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-primary);
@@ -130,9 +131,9 @@ body {
 .letter {
     display: inline-block;
     font-size: 72px;
-    font-weight: 300;
+    font-weight: 200;
     color: #1a1a1a;
-    letter-spacing: 2px;
+    letter-spacing: 4px;
     text-shadow: none;
     opacity: 1;
     position: relative;
@@ -182,13 +183,17 @@ body {
 
 .main-content {
     opacity: 0;
-    transform: scale(0.98);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transform: scale(0.96) translateY(20px);
+    filter: blur(8px);
+    transition: opacity 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                filter 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .main-content.show {
     opacity: 1;
-    transform: scale(1);
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
 }
 
 /* Opening Animation Keyframes */
@@ -277,7 +282,8 @@ body {
 
 .nav-brand {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 300;
+    letter-spacing: 1px;
     color: var(--text-primary);
 }
 
@@ -289,7 +295,8 @@ body {
 .nav-link {
     color: var(--text-secondary);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 300;
+    letter-spacing: 0.5px;
     transition: color 0.3s ease;
 }
 
@@ -357,7 +364,8 @@ body {
 
 .hero-title {
     font-size: clamp(48px, 8vw, 112px);
-    font-weight: 700;
+    font-weight: 200;
+    letter-spacing: 2px;
     margin-bottom: 24px;
     background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
     -webkit-background-clip: text;
@@ -367,12 +375,16 @@ body {
 
 .hero-subtitle {
     font-size: clamp(20px, 4vw, 32px);
+    font-weight: 300;
+    letter-spacing: 1px;
     color: var(--text-secondary);
     margin-bottom: 32px;
 }
 
 .hero-description {
     font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
     color: var(--text-tertiary);
     margin-bottom: 48px;
     max-width: 600px;
@@ -388,7 +400,8 @@ body {
     padding: 12px 32px;
     background: var(--accent-primary);
     color: var(--bg-primary);
-    font-weight: 600;
+    font-weight: 400;
+    letter-spacing: 0.5px;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -420,13 +433,16 @@ body {
 
 .section-title {
     font-size: clamp(32px, 6vw, 64px);
-    font-weight: 700;
+    font-weight: 200;
+    letter-spacing: 1px;
     color: var(--text-primary);
     margin-bottom: 24px;
 }
 
 .section-subtitle {
     font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
     color: var(--text-tertiary);
     max-width: 600px;
     margin: 0 auto;
@@ -468,12 +484,14 @@ body {
 
 .achievement-title {
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 400;
+    letter-spacing: 0.5px;
     color: var(--text-primary);
     margin-bottom: 12px;
 }
 
 .achievement-desc {
+    font-weight: 300;
     color: var(--text-tertiary);
     line-height: 1.6;
 }
@@ -488,7 +506,8 @@ body {
 
 .sports-title {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 300;
+    letter-spacing: 0.5px;
     color: var(--text-primary);
     text-align: center;
     margin-bottom: 24px;
@@ -506,7 +525,8 @@ body {
     border-radius: 50px;
     text-align: center;
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 300;
+    letter-spacing: 0.5px;
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
 }
@@ -551,7 +571,8 @@ body {
 
 .grades-header h3, .youtube-header h3 {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 300;
+    letter-spacing: 0.5px;
     color: var(--text-primary);
 }
 
@@ -587,7 +608,8 @@ body {
 
 .grade-name {
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
 .grade-status i {
@@ -625,7 +647,8 @@ body {
 
 .stat-label {
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
 .stat-item i {
@@ -650,7 +673,8 @@ body {
     background: #ef4444;
     color: #ffffff;
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 400;
+    letter-spacing: 0.5px;
     border-radius: 8px;
     transition: background 0.3s ease;
 }
@@ -717,7 +741,8 @@ body {
 
 .education-level {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 300;
+    letter-spacing: 0.5px;
     color: var(--text-primary);
     margin-bottom: 8px;
 }
@@ -738,7 +763,8 @@ body {
 
 .percentage {
     font-size: 32px;
-    font-weight: 700;
+    font-weight: 200;
+    letter-spacing: 1px;
     margin-bottom: 8px;
 }
 
@@ -754,7 +780,8 @@ body {
     padding: 4px 12px;
     border-radius: 50px;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
 .completed-status {
@@ -789,7 +816,8 @@ body {
 
 .focus-header h3 {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 300;
+    letter-spacing: 0.5px;
     color: var(--text-primary);
 }
 
@@ -832,12 +860,14 @@ body {
 
 .focus-title {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 300;
+    letter-spacing: 0.5px;
     margin-bottom: 12px;
     color: var(--text-primary);
 }
 
 .focus-desc {
+    font-weight: 300;
     color: var(--text-tertiary);
     line-height: 1.6;
 }
@@ -864,7 +894,8 @@ body {
 
 .contact-title, .form-title {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 300;
+    letter-spacing: 0.5px;
     color: var(--text-primary);
     margin-bottom: 32px;
 }
@@ -897,7 +928,8 @@ body {
 
 .contact-value {
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
 .social-section {
@@ -906,7 +938,8 @@ body {
 
 .social-title {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 300;
+    letter-spacing: 0.5px;
     color: var(--text-primary);
     margin-bottom: 24px;
 }
@@ -969,7 +1002,8 @@ body {
     align-items: center;
     gap: 8px;
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 300;
+    letter-spacing: 0.5px;
     font-size: 14px;
 }
 
@@ -1031,7 +1065,8 @@ body {
     color: var(--bg-primary);
     border: none;
     border-radius: 8px;
-    font-weight: 600;
+    font-weight: 400;
+    letter-spacing: 0.5px;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1061,7 +1096,8 @@ body {
     padding: 16px;
     border-radius: 8px;
     margin-bottom: 24px;
-    font-weight: 500;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
 .success-message {
@@ -1116,12 +1152,14 @@ body {
 
 .footer-brand {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 300;
+    letter-spacing: 1px;
     color: var(--text-primary);
 }
 
 .footer-text {
     text-align: right;
+    font-weight: 300;
     color: var(--text-tertiary);
 }
 
