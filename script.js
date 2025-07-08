@@ -2,18 +2,45 @@
 document.addEventListener('DOMContentLoaded', function() {
     const openingOverlay = document.getElementById('opening-overlay');
     const mainContent = document.getElementById('main-content');
+    const heroTitle = document.querySelector('.hero-title');
+    const openingName = document.querySelector('.opening-name');
     
     // Prevent scrolling during animation
     document.body.style.overflow = 'hidden';
     
+    // Position the hero title to match the opening name position initially
+    if (heroTitle && openingName) {
+        heroTitle.style.position = 'fixed';
+        heroTitle.style.top = '50%';
+        heroTitle.style.left = '50%';
+        heroTitle.style.transform = 'translate(-50%, -50%)';
+        heroTitle.style.zIndex = '10002';
+        heroTitle.style.opacity = '0';
+    }
+    
     // Start the opening animation sequence
     setTimeout(() => {
+        // Show the hero title in the same position as opening name
+        if (heroTitle) {
+            heroTitle.style.opacity = '1';
+        }
+        
         // Begin fade out of opening overlay
         openingOverlay.classList.add('fade-out');
         
         // Show main content with animation
         setTimeout(() => {
             mainContent.classList.add('show');
+            
+            // Move hero title to its final position
+            if (heroTitle) {
+                heroTitle.style.position = 'static';
+                heroTitle.style.top = 'auto';
+                heroTitle.style.left = 'auto';
+                heroTitle.style.transform = 'none';
+                heroTitle.style.zIndex = 'auto';
+            }
+            
             document.body.style.overflow = 'auto';
             
             // Remove overlay from DOM after animation completes
