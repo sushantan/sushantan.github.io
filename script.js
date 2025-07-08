@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 openingOverlay.remove();
             }, 600);
         }, 300);
-    }, 3500); // Total animation duration: 3.5 seconds
+    }, 3200); // Total animation duration: 3.2 seconds
 });
 
 // Theme Management
