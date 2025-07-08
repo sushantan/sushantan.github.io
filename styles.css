@@ -100,6 +100,26 @@ body {
 .opening-overlay.fade-out {
     opacity: 0;
     visibility: hidden;
+}
+
+.opening-overlay.transition-start {
+    background: transparent;
+    transition: background 0.6s ease;
+}
+
+.opening-overlay.transition-start .opening-content {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.opening-overlay.transition-start .name-container {
+    opacity: 1;
+    transition: none;
+}
+
+.opening-overlay.transition-start .loading-container {
+    opacity: 0;
+    transition: opacity 0.3s ease;
     pointer-events: none;
 }
 
@@ -185,20 +205,23 @@ body {
 .main-content {
     opacity: 0;
     visibility: hidden;
+    background: var(--bg-primary);
 }
 
 .main-content.show {
     opacity: 1;
     visibility: visible;
-    animation: contentReveal 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+    animation: contentReveal 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
 }
 
 @keyframes contentReveal {
     0% {
         opacity: 0;
+        transform: scale(0.98);
     }
     100% {
         opacity: 1;
+        transform: scale(1);
     }
 }
 
@@ -380,23 +403,29 @@ body {
     font-weight: 200;
     letter-spacing: 2px;
     margin-bottom: 24px;
-    background: linear-gradient(to right, var(--text-primary), var(--text-secondary));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    opacity: 0;
-    animation: heroTitleReveal 0.8s ease-out 0.3s forwards;
+    opacity: 1;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 2px;
 }
 
-@keyframes heroTitleReveal {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.hero-letter {
+    display: inline-block;
+    color: var(--text-primary);
+    text-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.8),
+        0 0 40px rgba(255, 255, 255, 0.6),
+        0 0 60px rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+}
+
+[data-theme="light"] .hero-letter {
+    color: var(--text-primary);
+    text-shadow: 
+        0 0 20px rgba(0, 0, 0, 0.3),
+        0 0 40px rgba(0, 0, 0, 0.2),
+        0 0 60px rgba(0, 0, 0, 0.1);
 }
 
 .hero-subtitle {
