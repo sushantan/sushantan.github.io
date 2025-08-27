@@ -759,6 +759,11 @@ body {
     border: 2px dashed var(--border-color);
 }
 
+.education-item.current {
+    border: 2px solid rgba(59, 130, 246, 0.3);
+    background: rgba(59, 130, 246, 0.05);
+}
+
 .education-content {
     display: flex;
     align-items: flex-start;
@@ -782,6 +787,11 @@ body {
     color: #eab308;
 }
 
+.education-item.current .education-icon {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
+}
+
 .education-level {
     font-size: 24px;
     font-weight: 300;
@@ -798,6 +808,12 @@ body {
 .pending-text {
     color: #eab308;
     font-size: 14px;
+}
+
+.current-text {
+    color: #3b82f6;
+    font-size: 14px;
+    font-weight: 400;
 }
 
 .education-result {
@@ -819,6 +835,11 @@ body {
     color: #eab308;
 }
 
+.education-item.current .percentage {
+    color: #3b82f6;
+    font-size: 18px;
+}
+
 .status {
     padding: 4px 12px;
     border-radius: 50px;
@@ -835,6 +856,11 @@ body {
 .pending-status {
     background: rgba(234, 179, 8, 0.1);
     color: #eab308;
+}
+
+.current-status {
+    background: rgba(59, 130, 246, 0.1);
+    color: #3b82f6;
 }
 
 .academic-focus {
