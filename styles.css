@@ -381,16 +381,22 @@ body {
     transition: all 0.3s ease;
     opacity: 0;
     animation: heroLinkedInReveal 0.8s ease-out 0.8s forwards;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .hero-linkedin:hover {
-    background: rgba(59, 130, 246, 0.2);
-    border-color: rgba(59, 130, 246, 0.5);
+    background: rgba(59, 130, 246, 0.15);
+    border-color: rgba(59, 130, 246, 0.4);
     transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
 }
 
 .hero-linkedin i {
     font-size: 16px;
+    color: #3b82f6;
+    flex-shrink: 0;
 }
 
 @keyframes heroLinkedInReveal {
@@ -1327,6 +1333,16 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    .hero-linkedin {
+        font-size: 13px;
+        padding: 6px 16px;
+        gap: 6px;
+    }
+    
+    .hero-linkedin i {
+        font-size: 14px;
+    }
+    
     .hero {
         padding-top: 100px;
     }
@@ -1405,6 +1421,17 @@ body {
 }
 
 @media (max-width: 480px) {
+    .hero-linkedin {
+        font-size: 12px;
+        padding: 5px 14px;
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+    
+    .hero-linkedin i {
+        font-size: 13px;
+    }
+    
     .hero {
         padding-top: 80px;
     }
