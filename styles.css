@@ -1,17 +1,17 @@
 :root {
     /* Dark theme colors (default) */
-    --bg-primary: #000000;
-    --bg-secondary: #111827;
-    --bg-tertiary: #1f2937;
-    --bg-quaternary: #374151;
+    --bg-primary: #0f0f0f;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #262626;
+    --bg-quaternary: #333333;
     --text-primary: #ffffff;
-    --text-secondary: #d1d5db;
-    --text-tertiary: #9ca3af;
-    --text-quaternary: #6b7280;
+    --text-secondary: #e5e5e5;
+    --text-tertiary: #b3b3b3;
+    --text-quaternary: #808080;
     --accent-primary: #ffffff;
-    --accent-secondary: #f3f4f6;
-    --border-color: #374151;
-    --shadow-color: rgba(0, 0, 0, 0.3);
+    --accent-secondary: #f0f0f0;
+    --border-color: #404040;
+    --shadow-color: rgba(0, 0, 0, 0.2);
     --success-color: #22c55e;
     --error-color: #ef4444;
     --warning-color: #eab308;
@@ -20,16 +20,16 @@
 [data-theme="light"] {
     /* Light theme colors */
     --bg-primary: #ffffff;
-    --bg-secondary: #f9fafb;
-    --bg-tertiary: #f3f4f6;
-    --bg-quaternary: #e5e7eb;
-    --text-primary: #111827;
-    --text-secondary: #374151;
-    --text-tertiary: #6b7280;
-    --text-quaternary: #9ca3af;
-    --accent-primary: #111827;
-    --accent-secondary: #1f2937;
-    --border-color: #e5e7eb;
+    --bg-secondary: #fafafa;
+    --bg-tertiary: #f5f5f5;
+    --bg-quaternary: #eeeeee;
+    --text-primary: #1a1a1a;
+    --text-secondary: #333333;
+    --text-tertiary: #666666;
+    --text-quaternary: #999999;
+    --accent-primary: #1a1a1a;
+    --accent-secondary: #333333;
+    --border-color: #e0e0e0;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --success-color: #16a34a;
     --error-color: #dc2626;
@@ -235,13 +235,13 @@ body {
     right: 0;
     z-index: 1000;
     transition: all 0.3s ease;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(15, 15, 15, 0.95);
     backdrop-filter: blur(15px);
     border-bottom: 1px solid var(--border-color);
 }
 
 .header.scrolled {
-    background: rgba(0, 0, 0, 0.98);
+    background: rgba(15, 15, 15, 0.98);
     backdrop-filter: blur(10px);
 }
 
@@ -327,13 +327,13 @@ body {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-primary) 50%, var(--bg-tertiary) 100%);
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 50%, var(--bg-secondary) 100%);
 }
 .hero::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: var(--shadow-color);
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .hero-content {
@@ -545,44 +545,101 @@ body {
 
 .achievements-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
     margin-bottom: 64px;
 }
 
 .achievement-card {
     background: var(--bg-tertiary);
-    padding: 32px;
-    border-radius: 12px;
+    padding: 28px;
+    border-radius: 16px;
     border: 1px solid var(--border-color);
     transition: all 0.3s ease;
     animation: slideUp 0.8s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.achievement-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ef4444);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.achievement-card.school-level::before {
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+}
+
+.achievement-card.interschool-level::before {
+    background: linear-gradient(90deg, #f59e0b, #d97706);
+}
+
+.achievement-card.college-level::before {
+    background: linear-gradient(90deg, #3b82f6, #2563eb);
 }
 
 .achievement-card:hover {
     background: var(--bg-quaternary);
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px var(--shadow-color);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px var(--shadow-color);
+}
+
+.achievement-card:hover::before {
+    opacity: 1;
 }
 
 .achievement-icon {
     color: var(--text-primary);
-    font-size: 32px;
-    margin-bottom: 16px;
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: var(--bg-quaternary);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
 }
 
 .achievement-title {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 400;
     letter-spacing: 0.5px;
     color: var(--text-primary);
-    margin-bottom: 12px;
+    margin-bottom: 16px;
 }
 
-.achievement-desc {
+.achievement-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.achievement-item {
     font-weight: 300;
     color: var(--text-tertiary);
     line-height: 1.6;
+    margin: 0;
+    font-size: 15px;
+}
+
+.achievement-item::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: var(--text-tertiary);
+    border-radius: 50%;
+    margin-right: 8px;
+    vertical-align: middle;
 }
 
 .sports-experience {
