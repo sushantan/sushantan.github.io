@@ -1,39 +1,39 @@
 :root {
     /* Dark theme colors (default) */
-    --bg-primary: #0f0f0f;
-    --bg-secondary: #1a1a1a;
-    --bg-tertiary: #262626;
-    --bg-quaternary: #333333;
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #111111;
+    --bg-tertiary: #1a1a1a;
+    --bg-quaternary: #222222;
     --text-primary: #ffffff;
-    --text-secondary: #e5e5e5;
-    --text-tertiary: #b3b3b3;
-    --text-quaternary: #808080;
-    --accent-primary: #ffffff;
-    --accent-secondary: #f0f0f0;
-    --border-color: #404040;
-    --shadow-color: rgba(0, 0, 0, 0.2);
-    --success-color: #22c55e;
-    --error-color: #ef4444;
-    --warning-color: #eab308;
+    --text-secondary: #f5f5f5;
+    --text-tertiary: #cccccc;
+    --text-quaternary: #999999;
+    --accent-primary: #3f94fc;
+    --accent-secondary: #2d7de8;
+    --border-color: #2a2a2a;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --success-color: #3f94fc;
+    --error-color: #ff4757;
+    --warning-color: #ffa502;
 }
 
 [data-theme="light"] {
     /* Light theme colors */
     --bg-primary: #ffffff;
-    --bg-secondary: #fafafa;
-    --bg-tertiary: #f5f5f5;
-    --bg-quaternary: #eeeeee;
-    --text-primary: #1a1a1a;
-    --text-secondary: #333333;
-    --text-tertiary: #666666;
-    --text-quaternary: #999999;
-    --accent-primary: #1a1a1a;
-    --accent-secondary: #333333;
-    --border-color: #e0e0e0;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #f1f3f4;
+    --bg-quaternary: #e8eaed;
+    --text-primary: #202124;
+    --text-secondary: #3c4043;
+    --text-tertiary: #5f6368;
+    --text-quaternary: #80868b;
+    --accent-primary: #3f94fc;
+    --accent-secondary: #2d7de8;
+    --border-color: #dadce0;
     --shadow-color: rgba(0, 0, 0, 0.1);
-    --success-color: #16a34a;
-    --error-color: #dc2626;
-    --warning-color: #ca8a04;
+    --success-color: #3f94fc;
+    --error-color: #ea4335;
+    --warning-color: #fbbc04;
 }
 
 * {
@@ -47,13 +47,14 @@ html {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    font-weight: 300;
+    font-family: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 400;
     line-height: 1.6;
     color: var(--text-primary);
     background-color: var(--bg-primary);
     transition: background-color 0.3s ease, color 0.3s ease;
     overflow-x: hidden;
+    letter-spacing: -0.01em;
 }
 
 .container {
@@ -105,14 +106,14 @@ body {
     align-items: baseline;
     gap: 2px;
     font-size: clamp(48px, 8vw, 112px);
-    font-weight: 200;
-    letter-spacing: 4px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     margin-bottom: 48px;
 }
 
 .letter {
     display: inline-block;
-    font-weight: 200;
+    font-weight: 700;
     color: #1a1a1a;
     text-shadow: none;
     opacity: 1;
@@ -264,8 +265,8 @@ body {
 
 .nav-brand {
     font-size: 24px;
-    font-weight: 300;
-    letter-spacing: 1px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     color: var(--text-primary);
 }
 
@@ -277,8 +278,8 @@ body {
 .nav-link {
     color: var(--text-secondary);
     text-decoration: none;
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
     transition: color 0.3s ease;
 }
 
@@ -345,8 +346,8 @@ body {
 
 .hero-title {
     font-size: clamp(48px, 8vw, 112px);
-    font-weight: 200;
-    letter-spacing: 4px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--text-primary);
     margin-bottom: 32px;
     opacity: 0;
@@ -369,33 +370,33 @@ body {
     align-items: center;
     gap: 8px;
     padding: 8px 20px;
-    background: rgba(59, 130, 246, 0.1);
-    border: 1px solid rgba(59, 130, 246, 0.3);
-    color: #3b82f6;
+    background: rgba(63, 148, 252, 0.1);
+    border: 1px solid rgba(63, 148, 252, 0.3);
+    color: var(--accent-primary);
     text-decoration: none;
-    font-weight: 300;
+    font-weight: 500;
     font-size: 14px;
-    letter-spacing: 0.5px;
+    letter-spacing: -0.005em;
     border-radius: 25px;
     margin-bottom: 24px;
     transition: all 0.3s ease;
     opacity: 0;
     animation: heroLinkedInReveal 0.8s ease-out 0.8s forwards;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
 .hero-linkedin:hover {
-    background: rgba(59, 130, 246, 0.15);
-    border-color: rgba(59, 130, 246, 0.4);
+    background: rgba(63, 148, 252, 0.15);
+    border-color: rgba(63, 148, 252, 0.4);
     transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 4px 12px rgba(63, 148, 252, 0.2);
 }
 
 .hero-linkedin i {
     font-size: 16px;
-    color: #3b82f6;
+    color: var(--accent-primary);
     flex-shrink: 0;
 }
 
@@ -412,8 +413,8 @@ body {
 
 .hero-subtitle {
     font-size: clamp(20px, 4vw, 32px);
-    font-weight: 300;
-    letter-spacing: 1px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
     color: var(--text-secondary);
     margin-bottom: 32px;
     opacity: 0;
@@ -433,8 +434,8 @@ body {
 
 .hero-description {
     font-size: 18px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-weight: 400;
+    letter-spacing: -0.005em;
     color: var(--text-tertiary);
     margin-bottom: 48px;
     max-width: 600px;
@@ -462,9 +463,9 @@ body {
     gap: 8px;
     padding: 12px 32px;
     background: var(--accent-primary);
-    color: var(--bg-primary);
-    font-weight: 400;
-    letter-spacing: 0.5px;
+    color: #ffffff;
+    font-weight: 500;
+    letter-spacing: -0.005em;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -488,6 +489,7 @@ body {
 .hero-btn:hover {
     background: var(--accent-secondary);
     transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(63, 148, 252, 0.3);
 }
 
 .hero-scroll {
@@ -522,16 +524,16 @@ body {
 
 .section-title {
     font-size: clamp(32px, 6vw, 64px);
-    font-weight: 200;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--text-primary);
     margin-bottom: 24px;
 }
 
 .section-subtitle {
     font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-weight: 400;
+    letter-spacing: -0.005em;
     color: var(--text-tertiary);
     max-width: 600px;
     margin: 0 auto;
@@ -574,15 +576,15 @@ body {
 }
 
 .achievement-card.school-level::before {
-    background: linear-gradient(90deg, #22c55e, #16a34a);
+    background: linear-gradient(90deg, #3f94fc, #2d7de8);
 }
 
 .achievement-card.interschool-level::before {
-    background: linear-gradient(90deg, #f59e0b, #d97706);
+    background: linear-gradient(90deg, #3f94fc, #5b6ef7);
 }
 
 .achievement-card.college-level::before {
-    background: linear-gradient(90deg, #3b82f6, #2563eb);
+    background: linear-gradient(90deg, #3f94fc, #1e40af);
 }
 
 .achievement-card:hover {
@@ -611,8 +613,8 @@ body {
 
 .achievement-title {
     font-size: 22px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     color: var(--text-primary);
     margin-bottom: 16px;
 }
@@ -624,11 +626,12 @@ body {
 }
 
 .achievement-item {
-    font-weight: 300;
+    font-weight: 400;
     color: var(--text-tertiary);
     line-height: 1.6;
     margin: 0;
     font-size: 15px;
+    letter-spacing: -0.005em;
 }
 
 .achievement-item::before {
@@ -717,8 +720,8 @@ body {
 
 .grades-header h3, .youtube-header h3 {
     font-size: 24px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     color: var(--text-primary);
 }
 
@@ -754,19 +757,19 @@ body {
 
 .grade-name {
     color: var(--text-primary);
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
 }
 
 .grade-status i {
-    color: #22c55e;
+    color: var(--accent-primary);
     font-size: 20px;
 }
 
 .pulse-dot {
     width: 12px;
     height: 12px;
-    background: #eab308;
+    background: var(--accent-primary);
     border-radius: 50%;
     animation: pulse 2s infinite;
 }
@@ -793,8 +796,8 @@ body {
 
 .stat-label {
     color: var(--text-primary);
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
 }
 
 .stat-item i {
@@ -816,17 +819,18 @@ body {
     align-items: center;
     gap: 8px;
     padding: 12px 24px;
-    background: #ef4444;
+    background: var(--accent-primary);
     color: #ffffff;
     text-decoration: none;
-    font-weight: 400;
-    letter-spacing: 0.5px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
     border-radius: 8px;
     transition: background 0.3s ease;
 }
 
 .youtube-btn:hover {
-    background: #dc2626;
+    background: var(--accent-secondary);
+    box-shadow: 0 4px 12px rgba(63, 148, 252, 0.3);
 }
 
 /* Studies Section */
@@ -863,8 +867,8 @@ body {
 }
 
 .education-item.current {
-    border: 2px solid rgba(59, 130, 246, 0.3);
-    background: rgba(59, 130, 246, 0.05);
+    border: 2px solid rgba(63, 148, 252, 0.3);
+    background: rgba(63, 148, 252, 0.05);
 }
 
 .education-content {
@@ -881,24 +885,24 @@ body {
 }
 
 .education-item.completed .education-icon {
-    background: rgba(34, 197, 94, 0.1);
-    color: #22c55e;
+    background: rgba(63, 148, 252, 0.1);
+    color: var(--accent-primary);
 }
 
 .education-item.pending .education-icon {
-    background: rgba(234, 179, 8, 0.1);
-    color: #eab308;
+    background: rgba(63, 148, 252, 0.1);
+    color: var(--accent-primary);
 }
 
 .education-item.current .education-icon {
-    background: rgba(59, 130, 246, 0.1);
-    color: #3b82f6;
+    background: rgba(63, 148, 252, 0.1);
+    color: var(--accent-primary);
 }
 
 .education-level {
     font-size: 24px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     color: var(--text-primary);
     margin-bottom: 8px;
 }
@@ -914,9 +918,9 @@ body {
 }
 
 .current-text {
-    color: #3b82f6;
+    color: var(--accent-primary);
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 500;
 }
 
 .education-result {
@@ -925,21 +929,21 @@ body {
 
 .percentage {
     font-size: 32px;
-    font-weight: 200;
-    letter-spacing: 1px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
     margin-bottom: 8px;
 }
 
 .education-item.completed .percentage {
-    color: #22c55e;
+    color: var(--accent-primary);
 }
 
 .education-item.pending .percentage {
-    color: #eab308;
+    color: var(--accent-primary);
 }
 
 .education-item.current .percentage {
-    color: #3b82f6;
+    color: var(--accent-primary);
     font-size: 18px;
 }
 
@@ -988,8 +992,8 @@ body {
 
 .focus-header h3 {
     font-size: 24px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     color: var(--text-primary);
 }
 
@@ -1019,29 +1023,30 @@ body {
 }
 
 .focus-item:nth-child(1) .focus-icon {
-    color: #3b82f6;
+    color: var(--accent-primary);
 }
 
 .focus-item:nth-child(2) .focus-icon {
-    color: #22c55e;
+    color: var(--accent-primary);
 }
 
 .focus-item:nth-child(3) .focus-icon {
-    color: #a855f7;
+    color: var(--accent-primary);
 }
 
 .focus-title {
     font-size: 24px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     margin-bottom: 12px;
     color: var(--text-primary);
 }
 
 .focus-desc {
-    font-weight: 300;
+    font-weight: 400;
     color: var(--text-tertiary);
     line-height: 1.6;
+    letter-spacing: -0.005em;
 }
 
 /* Contact Section */
@@ -1066,8 +1071,8 @@ body {
 
 .contact-title, .form-title {
     font-size: 24px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     color: var(--text-primary);
     margin-bottom: 32px;
 }
@@ -1100,8 +1105,8 @@ body {
 
 .contact-value {
     color: var(--text-primary);
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
 }
 
 .social-section {
@@ -1110,8 +1115,8 @@ body {
 
 .social-title {
     font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     color: var(--text-primary);
     margin-bottom: 24px;
 }
@@ -1142,7 +1147,7 @@ body {
 }
 
 .social-link.linkedin:hover {
-    background: #3b82f6;
+    background: var(--accent-primary);
     color: #ffffff;
 }
 
@@ -1174,8 +1179,8 @@ body {
     align-items: center;
     gap: 8px;
     color: var(--text-primary);
-    font-weight: 300;
-    letter-spacing: 0.5px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
     font-size: 14px;
 }
 
@@ -1201,15 +1206,15 @@ body {
 .form-select:focus,
 .form-textarea:focus {
     outline: none;
-    border-color: var(--text-primary);
+    border-color: var(--accent-primary);
     background: var(--bg-quaternary);
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(63, 148, 252, 0.1);
 }
 
 [data-theme="light"] .form-input:focus,
 [data-theme="light"] .form-select:focus,
 [data-theme="light"] .form-textarea:focus {
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0 3px rgba(63, 148, 252, 0.1);
 }
 
 .form-input::placeholder,
@@ -1234,11 +1239,11 @@ body {
     gap: 8px;
     padding: 16px 32px;
     background: var(--accent-primary);
-    color: var(--bg-primary);
+    color: #ffffff;
     border: none;
     border-radius: 8px;
-    font-weight: 400;
-    letter-spacing: 0.5px;
+    font-weight: 500;
+    letter-spacing: -0.005em;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
@@ -1248,7 +1253,7 @@ body {
 .form-submit-btn:hover {
     background: var(--accent-secondary);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px var(--shadow-color);
+    box-shadow: 0 8px 25px rgba(63, 148, 252, 0.3);
 }
 
 .form-submit-btn:active {
@@ -1304,7 +1309,7 @@ body {
 }
 
 .form-note i {
-    color: #3b82f6;
+    color: var(--accent-primary);
 }
 
 /* Footer */
@@ -1324,15 +1329,16 @@ body {
 
 .footer-brand {
     font-size: 20px;
-    font-weight: 300;
-    letter-spacing: 1px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
     color: var(--text-primary);
 }
 
 .footer-text {
     text-align: right;
-    font-weight: 300;
+    font-weight: 400;
     color: var(--text-tertiary);
+    letter-spacing: -0.005em;
 }
 
 .footer-text p:last-child {
@@ -1590,6 +1596,6 @@ button, .hero-btn, .youtube-btn, .social-link, .theme-toggle {
     left: 0;
     right: 0;
     height: 2px;
-    background: var(--text-primary);
+    background: var(--accent-primary);
     border-radius: 1px;
 }
