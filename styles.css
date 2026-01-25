@@ -1,38 +1,42 @@
 :root {
     /* Modern dark theme colors */
-    --bg-primary: #0a0a0a;
-    --bg-secondary: #111111;
-    --bg-tertiary: #1a1a1a;
-    --bg-quaternary: #222222;
+    --bg-primary: #0f1419;
+    --bg-secondary: #1a2332;
+    --bg-tertiary: #243447;
+    --bg-quaternary: #2d4a5c;
     --text-primary: #ffffff;
     --text-secondary: #f0f0f0;
     --text-tertiary: #d0d0d0;
     --text-quaternary: #888888;
     --accent-primary: #4287f5;
-    --accent-secondary: #3a7ae8;
-    --border-color: rgba(66, 135, 245, 0.15);
+    --accent-secondary: #5a9bff;
+    --border-color: rgba(66, 135, 245, 0.25);
     --shadow-color: rgba(0, 0, 0, 0.4);
     --success-color: #4287f5;
     --error-color: #ff4757;
     --warning-color: #ffa502;
+    --gradient-primary: linear-gradient(135deg, #4287f5 0%, #5a9bff 100%);
+    --gradient-secondary: linear-gradient(135deg, #1a2332 0%, #243447 100%);
 }
 
 [data-theme="light"] {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f8f9fa;
-    --bg-tertiary: #f1f3f4;
-    --bg-quaternary: #e8eaed;
+    --bg-primary: #f8faff;
+    --bg-secondary: #eef4ff;
+    --bg-tertiary: #e1ecff;
+    --bg-quaternary: #d4e4ff;
     --text-primary: #202124;
     --text-secondary: #3c4043;
     --text-tertiary: #5f6368;
     --text-quaternary: #80868b;
     --accent-primary: #4287f5;
-    --accent-secondary: #3a7ae8;
-    --border-color: #dadce0;
+    --accent-secondary: #5a9bff;
+    --border-color: rgba(66, 135, 245, 0.2);
     --shadow-color: rgba(0, 0, 0, 0.1);
     --success-color: #4287f5;
     --error-color: #ea4335;
     --warning-color: #fbbc04;
+    --gradient-primary: linear-gradient(135deg, #4287f5 0%, #5a9bff 100%);
+    --gradient-secondary: linear-gradient(135deg, #eef4ff 0%, #e1ecff 100%);
 }
 
 * {
@@ -87,7 +91,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #000000 100%);
+    background: linear-gradient(135deg, #0f1419 0%, #1a2332 50%, #243447 100%);
     z-index: 10000;
     display: flex;
     align-items: center;
@@ -235,22 +239,22 @@ body {
     right: 0;
     z-index: 1000;
     transition: all 0.3s ease;
-    background: rgba(10, 10, 10, 0.95);
+    background: rgba(15, 20, 25, 0.95);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 2px solid var(--accent-primary);
 }
 
 .header.scrolled {
-    background: rgba(10, 10, 10, 0.98);
+    background: rgba(15, 20, 25, 0.98);
     backdrop-filter: blur(20px);
 }
 
 [data-theme="light"] .header {
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(248, 250, 255, 0.95);
 }
 
 [data-theme="light"] .header.scrolled {
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(248, 250, 255, 0.98);
 }
 
 .nav {
@@ -310,8 +314,8 @@ body {
 }
 
 .theme-toggle {
-    background: rgba(63, 148, 252, 0.1);
-    border: 1px solid rgba(63, 148, 252, 0.3);
+    background: var(--gradient-primary);
+    border: 2px solid var(--accent-primary);
     color: var(--accent-primary);
     width: 40px;
     height: 40px;
@@ -322,11 +326,13 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     font-size: 16px;
+    color: white;
 }
 
 .theme-toggle:hover {
-    background: rgba(63, 148, 252, 0.2);
+    background: var(--accent-secondary);
     transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(66, 135, 245, 0.3);
 }
 
 .nav-toggle {
@@ -351,7 +357,7 @@ body {
     content: '';
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse at center, rgba(66, 135, 245, 0.03) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(66, 135, 245, 0.15) 0%, rgba(90, 155, 255, 0.05) 50%, transparent 70%);
 }
 
 .hero-content {
@@ -387,9 +393,9 @@ body {
     align-items: center;
     gap: 12px;
     padding: 12px 24px;
-    background: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--accent-primary);
+    background: var(--gradient-primary);
+    border: 2px solid var(--accent-primary);
+    color: white;
     text-decoration: none;
     font-weight: 400;
     font-size: 16px;
@@ -405,15 +411,16 @@ body {
 }
 
 .hero-linkedin:hover {
-    background: var(--accent-primary);
-    color: var(--bg-primary);
-    border-color: var(--accent-primary);
+    background: var(--accent-secondary);
+    color: white;
+    border-color: var(--accent-secondary);
     transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(66, 135, 245, 0.4);
 }
 
 .hero-linkedin i {
     font-size: 16px;
-    color: var(--accent-primary);
+    color: white;
     flex-shrink: 0;
 }
 
@@ -479,8 +486,8 @@ body {
     align-items: center;
     gap: 12px;
     padding: 16px 40px;
-    background: var(--accent-primary);
-    color: var(--bg-primary);
+    background: var(--gradient-primary);
+    color: white;
     font-weight: 600;
     letter-spacing: -0.01em;
     font-size: 16px;
@@ -507,7 +514,7 @@ body {
 .hero-btn:hover {
     background: var(--accent-secondary);
     transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(66, 135, 245, 0.3);
+    box-shadow: 0 12px 40px rgba(66, 135, 245, 0.5);
 }
 
 .hero-scroll {
@@ -561,7 +568,7 @@ body {
 /* Sports Section */
 .sports {
     padding: 120px 0;
-    background: var(--bg-secondary);
+    background: var(--gradient-secondary);
 }
 
 .achievements-grid {
@@ -572,10 +579,10 @@ body {
 }
 
 .achievement-card {
-    background: var(--bg-tertiary);
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-quaternary) 100%);
     padding: 40px;
     border-radius: 20px;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     transition: all 0.4s ease;
     animation: slideUp 0.8s ease-out;
     position: relative;
@@ -583,9 +590,9 @@ body {
 }
 
 .achievement-card:hover {
-    background: var(--bg-quaternary);
+    background: linear-gradient(135deg, var(--bg-quaternary) 0%, rgba(66, 135, 245, 0.1) 100%);
     transform: translateY(-8px);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 60px rgba(66, 135, 245, 0.2);
     border-color: var(--accent-primary);
 }
 
@@ -598,10 +605,10 @@ body {
     justify-content: center;
     width: 64px;
     height: 64px;
-    background: rgba(66, 135, 245, 0.1);
+    background: var(--gradient-primary);
     border-radius: 16px;
-    border: 1px solid var(--border-color);
-    color: var(--accent-primary);
+    border: 2px solid var(--accent-primary);
+    color: white;
 }
 
 .achievement-title {
@@ -681,7 +688,7 @@ body {
 /* Music Section */
 .music {
     padding: 120px 0;
-    background: var(--bg-primary);
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 
 .music-content {
@@ -692,18 +699,19 @@ body {
 }
 
 .music-grades, .youtube-section {
-    background: var(--bg-secondary);
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
     padding: 40px;
     border-radius: 20px;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     animation: slideUp 0.8s ease-out;
     transition: all 0.4s ease;
 }
 
 .music-grades:hover, .youtube-section:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 16px 40px rgba(66, 135, 245, 0.2);
     border-color: var(--accent-primary);
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, rgba(66, 135, 245, 0.1) 100%);
 }
 
 .grades-header, .youtube-header {
@@ -715,7 +723,7 @@ body {
 
 .grades-header i {
     font-size: 32px;
-    color: var(--text-primary);
+    color: var(--accent-primary);
 }
 
 .grades-header h3, .youtube-header h3 {
@@ -727,7 +735,7 @@ body {
 
 .youtube-header i {
     font-size: 32px;
-    color: #ef4444;
+    color: #ff6b6b;
 }
 
 .grades-list {
@@ -746,13 +754,18 @@ body {
 }
 
 .grade-item.completed {
-    background: rgba(66, 135, 245, 0.05);
-    border: 1px solid rgba(66, 135, 245, 0.2);
+    background: linear-gradient(135deg, rgba(66, 135, 245, 0.1) 0%, rgba(90, 155, 255, 0.05) 100%);
+    border: 2px solid rgba(66, 135, 245, 0.3);
 }
 
 .grade-item.current {
-    background: rgba(66, 135, 245, 0.1);
-    border: 1px solid var(--accent-primary);
+    background: var(--gradient-primary);
+    border: 2px solid var(--accent-primary);
+    color: white;
+}
+
+.grade-item.current .grade-name {
+    color: white;
 }
 
 .grade-name {
@@ -782,10 +795,10 @@ body {
 }
 
 .youtube-stats {
-    background: var(--bg-tertiary);
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-quaternary) 100%);
     padding: 16px;
     border-radius: 8px;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     margin-bottom: 24px;
 }
 
@@ -822,8 +835,8 @@ body {
     align-items: center;
     gap: 12px;
     padding: 16px 32px;
-    background: var(--accent-primary);
-    color: var(--bg-primary);
+    background: var(--gradient-primary);
+    color: white;
     text-decoration: none;
     font-weight: 600;
     letter-spacing: -0.01em;
@@ -835,13 +848,13 @@ body {
 .youtube-btn:hover {
     background: var(--accent-secondary);
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(66, 135, 245, 0.3);
+    box-shadow: 0 8px 25px rgba(66, 135, 245, 0.5);
 }
 
 /* Studies Section */
 .studies {
     padding: 80px 0;
-    background: var(--bg-secondary);
+    background: var(--gradient-secondary);
 }
 
 .education-list {
@@ -853,29 +866,29 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    background: var(--bg-tertiary);
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-quaternary) 100%);
     padding: 40px;
     border-radius: 20px;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     margin-bottom: 40px;
     transition: all 0.4s ease;
     animation: slideUp 0.8s ease-out;
 }
 
 .education-item:hover {
-    background: var(--bg-quaternary);
+    background: linear-gradient(135deg, var(--bg-quaternary) 0%, rgba(66, 135, 245, 0.1) 100%);
     transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 16px 40px rgba(66, 135, 245, 0.2);
     border-color: var(--accent-primary);
 }
 
 .education-item.pending {
-    border: 2px dashed var(--border-color);
+    border: 3px dashed var(--accent-primary);
 }
 
 .education-item.current {
-    border: 2px solid var(--accent-primary);
-    background: rgba(66, 135, 245, 0.05);
+    border: 3px solid var(--accent-primary);
+    background: linear-gradient(135deg, rgba(66, 135, 245, 0.1) 0%, rgba(90, 155, 255, 0.05) 100%);
 }
 
 .education-content {
@@ -902,8 +915,9 @@ body {
 }
 
 .education-item.current .education-icon {
-    background: rgba(66, 135, 245, 0.1);
-    color: var(--accent-primary);
+    background: var(--gradient-primary);
+    color: white;
+    border: 2px solid var(--accent-primary);
 }
 
 .education-level {
@@ -978,18 +992,19 @@ body {
 }
 
 .academic-focus {
-    background: var(--bg-tertiary);
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-quaternary) 100%);
     padding: 40px;
     border-radius: 20px;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     animation: slideUp 0.8s ease-out;
     transition: all 0.4s ease;
 }
 
 .academic-focus:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 16px 40px rgba(66, 135, 245, 0.2);
     border-color: var(--accent-primary);
+    background: linear-gradient(135deg, var(--bg-quaternary) 0%, rgba(66, 135, 245, 0.1) 100%);
 }
 
 .focus-header {
@@ -1001,7 +1016,7 @@ body {
 
 .focus-header i {
     font-size: 32px;
-    color: var(--text-primary);
+    color: var(--accent-primary);
 }
 
 .focus-header h3 {
@@ -1020,16 +1035,16 @@ body {
 .focus-item {
     text-align: center;
     padding: 32px;
-    background: rgba(66, 135, 245, 0.03);
+    background: linear-gradient(135deg, rgba(66, 135, 245, 0.1) 0%, rgba(90, 155, 255, 0.05) 100%);
     border-radius: 16px;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     transition: all 0.4s ease;
 }
 
 .focus-item:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
-    background: rgba(66, 135, 245, 0.08);
+    box-shadow: 0 16px 40px rgba(66, 135, 245, 0.3);
+    background: linear-gradient(135deg, rgba(66, 135, 245, 0.15) 0%, rgba(90, 155, 255, 0.1) 100%);
     border-color: var(--accent-primary);
 }
 
@@ -1058,7 +1073,7 @@ body {
 /* Contact Section */
 .contact {
     padding: 120px 0;
-    background: var(--bg-primary);
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 
 .contact-content {
@@ -1068,18 +1083,19 @@ body {
 }
 
 .contact-info, .contact-form-container {
-    background: var(--bg-secondary);
+    background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
     padding: 40px;
     border-radius: 20px;
-    border: 1px solid var(--border-color);
+    border: 2px solid var(--border-color);
     animation: slideUp 0.8s ease-out;
     transition: all 0.4s ease;
 }
 
 .contact-info:hover, .contact-form-container:hover {
     transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 16px 40px rgba(66, 135, 245, 0.2);
     border-color: var(--accent-primary);
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, rgba(66, 135, 245, 0.1) 100%);
 }
 
 .contact-title, .form-title {
@@ -1100,13 +1116,13 @@ body {
 .contact-icon {
     width: 56px;
     height: 56px;
-    background: rgba(66, 135, 245, 0.1);
-    border: 1px solid var(--border-color);
+    background: var(--gradient-primary);
+    border: 2px solid var(--accent-primary);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--accent-primary);
+    color: white;
     font-size: 24px;
 }
 
@@ -1143,13 +1159,13 @@ body {
 .social-link {
     width: 56px;
     height: 56px;
-    background: rgba(66, 135, 245, 0.1);
-    border: 1px solid var(--border-color);
+    background: var(--gradient-primary);
+    border: 2px solid var(--accent-primary);
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--accent-primary);
+    color: white;
     text-decoration: none;
     font-size: 24px;
     transition: all 0.4s ease;
@@ -1157,31 +1173,31 @@ body {
 
 .social-link:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 25px rgba(66, 135, 245, 0.4);
 }
 
 .social-link.youtube:hover {
-    background: #ef4444;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ff5252 100%);
     color: #ffffff;
-    border-color: #ef4444;
+    border-color: #ff6b6b;
 }
 
 .social-link.linkedin:hover {
-    background: var(--accent-primary);
+    background: var(--accent-secondary);
     color: #ffffff;
-    border-color: var(--accent-primary);
+    border-color: var(--accent-secondary);
 }
 
 .social-link.github:hover {
-    background: #333333;
+    background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
     color: #ffffff;
-    border-color: #333333;
+    border-color: #4a5568;
 }
 
 .social-link.instagram:hover {
-    background: #ec4899;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     color: #ffffff;
-    border-color: #ec4899;
+    border-color: #f093fb;
 }
 
 /* Static Contact Form */
@@ -1215,8 +1231,8 @@ body {
 .form-input,
 .form-select,
 .form-textarea {
-    background: var(--bg-tertiary);
-    border: 1px solid var(--border-color);
+    background: linear-gradient(135deg, var(--bg-tertiary) 0%, var(--bg-quaternary) 100%);
+    border: 2px solid var(--border-color);
     border-radius: 12px;
     padding: 16px 20px;
     color: var(--text-primary);
@@ -1230,8 +1246,8 @@ body {
 .form-textarea:focus {
     outline: none;
     border-color: var(--accent-primary);
-    background: var(--bg-quaternary);
-    box-shadow: 0 0 0 3px rgba(66, 135, 245, 0.1);
+    background: linear-gradient(135deg, var(--bg-quaternary) 0%, rgba(66, 135, 245, 0.1) 100%);
+    box-shadow: 0 0 0 3px rgba(66, 135, 245, 0.2);
 }
 
 .form-input::placeholder,
@@ -1255,8 +1271,8 @@ body {
     justify-content: center;
     gap: 12px;
     padding: 20px 40px;
-    background: var(--accent-primary);
-    color: var(--bg-primary);
+    background: var(--gradient-primary);
+    color: white;
     border: none;
     border-radius: 12px;
     font-weight: 600;
@@ -1270,7 +1286,7 @@ body {
 .form-submit-btn:hover {
     background: var(--accent-secondary);
     transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(66, 135, 245, 0.3);
+    box-shadow: 0 12px 40px rgba(66, 135, 245, 0.5);
 }
 
 .form-submit-btn:active {
@@ -1295,14 +1311,14 @@ body {
 }
 
 .success-message {
-    background: rgba(66, 135, 245, 0.1);
-    border: 1px solid var(--accent-primary);
+    background: linear-gradient(135deg, rgba(66, 135, 245, 0.15) 0%, rgba(90, 155, 255, 0.1) 100%);
+    border: 2px solid var(--accent-primary);
     color: var(--success-color);
 }
 
 .error-message {
-    background: rgba(239, 68, 68, 0.1);
-    border: 1px solid rgba(239, 68, 68, 0.3);
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.15) 0%, rgba(255, 82, 82, 0.1) 100%);
+    border: 2px solid rgba(255, 107, 107, 0.4);
     color: var(--error-color);
 }
 
@@ -1331,7 +1347,7 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--bg-secondary);
+    background: var(--gradient-secondary);
     padding: 64px 0;
 }
 
